@@ -1,0 +1,73 @@
+{
+  "name": "modal-framework",
+  "version": "1.0.0",
+  "description": "A framework for allowing simple reusable modal windows",
+  "main": "dist/modal-framework.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=production nyc --reporter=text ./node_modules/.bin/mocha --recursive --require ./tests/setup.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "start:demo": "cross-env NODE_ENV=development node demo/devServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewmherren/modal-framework.git"
+  },
+  "author": "Andrew Herren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewmherren/modal-framework/issues"
+  },
+  "homepage": "https://github.com/xtractsolutions/modal-framework#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.13",
+    "@fortawesome/free-solid-svg-icons": "^5.7.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-classes": "^7.2.2",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "autoprefixer": "^9.4.4",
+    "autoprefixer-stylus": "^0.14.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "eslint": "^5.12.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.3",
+    "eslint-plugin-standard": "^4.0.0",
+    "event-source-polyfill": "^1.0.5",
+    "express": "^4.16.4",
+    "postcss-loader": "^3.0.0",
+    "poststylus": "^1.0.0",
+    "prettier": "^1.15.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-devtools": "^3.5.3",
+    "react-dom": "^16.7.0",
+    "rimraf": "^2.6.3",
+    "standard": "^12.0.1",
+    "style-loader": "^0.23.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-middleware": "^3.5.0",
+    "webpack-hot-middleware": "^2.24.3"
+  }
+}
