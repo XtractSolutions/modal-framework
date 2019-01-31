@@ -104,12 +104,13 @@ and pass the component to the ModalFramework
    <MyComponants>
 </div>
 ```
-Props that will be passed into the child Modal componant are:
-prop name| comment
-----|----
-closeSelf | a function that can be called to close the modal window
-modalAddress | a string representing a unique id of the modal window
-config | an object containing properties of your choosing
+Props that will be passed into the child Modal component are:
+
+|prop name|comment|
+|----|----|
+|closeSelf | a function that can be called to close the modal window|
+|modalAddress | a string representing a unique id of the modal window|
+|config | an object containing properties of your choosing|
 
 ### Modal framework actions
 
