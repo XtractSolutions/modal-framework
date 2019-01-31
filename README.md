@@ -1,4 +1,15 @@
-To use modal framework:
+### Overview
+
+When you open a modal you can give it a unique id as the first arg and then a configuration object 
+(which matches the args we used to use) as the second. 
+So this.props.openModal('some_unique_modal_name',{title: 'sometitle'....}). 
+Then you can close it anywhere in the app by referring to that unique id with this.props.closeModal('some_unique_modal_name') 
+OR, the component that is rendered directly within the modal (StandardModalContent for example) 
+will be passed in this.props.closeSelf() which knows its own id... but that is only available at the top most level within the 
+modal unless you specifically pass it further down within your modal "stack".
+
+### To use modal framework:
+
 1) Install the framework
 
 ```
