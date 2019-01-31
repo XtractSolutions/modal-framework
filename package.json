@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrewmherren/modal-framework.git"
+    "url": "git+https://github.com/xtractsolutions/modal-framework.git"
   },
   "author": "Andrew Herren",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andrewmherren/modal-framework/issues"
+    "url": "https://github.com/xtractsolutions/modal-framework/issues"
   },
   "homepage": "https://github.com/xtractsolutions/modal-framework#readme",
   "dependencies": {
