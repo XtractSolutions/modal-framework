@@ -20,6 +20,7 @@ npm install git+https://github.com/xtractsolutions/modal-framework --save
 ```
 
 and provide the following props
+
 |prop name| required | default | comment|
 |----|----|----|----|
 |coverOpacity | no | 0.5 | opacity of the black screen cover behind the modal.|
