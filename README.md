@@ -20,14 +20,14 @@ npm install git+https://github.com/xtractsolutions/modal-framework --save
 ```
 
 and provide the following props
-prop name| required | default | comment
-----|----|----|----
-coverOpacity | no | 0.5 | opacity of the black screen cover behind the modal.
-coverEnabled | no | true | should a screen cover be used behind the modal to prevent clicks
-startingZIndex | no | 1,000,000 | the zIndex that will be applied to the screen cover. Each modal will use this zIndex + its index in the modals array
-modals | yes | [] | Your applications state array of modals (might be state, redux, context, etc)
-dispatch | yes | n/a | A function which accepts action objects and dispatches them to your reducers.
-`child` | no | n/a | exactly one optional child component can be included. This component will provide the template for all modal windows.
+|prop name| required | default | comment|
+|----|----|----|----|
+|coverOpacity | no | 0.5 | opacity of the black screen cover behind the modal.|
+|coverEnabled | no | true | should a screen cover be used behind the modal to prevent clicks|
+|startingZIndex | no | 1,000,000 | the zIndex that will be applied to the screen cover. Each modal will use this zIndex + its index in the modals array|
+|modals | yes | [] | Your applications state array of modals (might be state, redux, context, etc)|
+|dispatch | yes | n/a | A function which accepts action objects and dispatches them to your reducers.|
+|`child` | no | n/a | exactly one optional child component can be included. This component will provide the template for all modal windows.|
 
 3) Import actions to make them available within your application.
 For redux:
