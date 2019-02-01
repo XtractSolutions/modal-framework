@@ -130,7 +130,7 @@ openModal(address, config)
 |arg | comment|
 |----|----|
 |address | either, a unique string to use as the modal address (eg: my_modal_1) or a callback function which will recieve a unique string as an argument (eg (address) => this.setState({modalAddress: address}))|
-|config | an object of your choosing to be passed into your modal dialog (eg: {title: 'my modal', content: <div>my message</div>, closable: true})|
+|config | an object of your choosing to be passed into your modal dialog (eg: <br>{<br>  title: 'my modal', <br>  content: \<div>my message\</div>, <br>  closable: true<br>})|
 
 closeModal(address)
 
