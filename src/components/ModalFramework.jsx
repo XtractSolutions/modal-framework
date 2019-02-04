@@ -18,7 +18,7 @@ class ModalFramework extends React.Component {
     if (React.Children.count(this.props.children) === 1) {
       return React.cloneElement(this.props.children, {
         key: modal.address,
-        style: { zIndex: this.props.startingZIndex + idx + 1, ...tile },
+        style: { zIndex: this.props.startingZIndex + idx, ...tile },
         modalAddress: modal.address,
         config: modal.config,
         closeSelf: () => this.props.dispatch(closeModal(modal.address))
@@ -27,7 +27,7 @@ class ModalFramework extends React.Component {
       return (
         <DefaultModal
           key={modal.address}
-          style={{ zIndex: this.props.startingZIndex + idx + 1, ...tile }}
+          style={{ zIndex: this.props.startingZIndex + idx, ...tile }}
           config={modal.config}
           modalAddress={modal.adddress}
           closeSelf={() => this.props.dispatch(closeModal(modal.address))}
@@ -42,14 +42,15 @@ class ModalFramework extends React.Component {
       this.props.modals.length >= 1
     ) {
       return (
-        <div
-          id="modal-framework-default"
-          className="modal-screen-cover"
-          style={{
-            zIndex: this.props.startingZIndex,
-            backgroundColor: `rgba(0,0,0,${this.props.coverOpacity})`
-          }}
-        >
+        <div id="modal-framework-default">
+          <div
+            className="modal-screen-cover"
+            style={{
+              // length - 1 because length is 1 based not 0 based
+              zIndex: this.props.startingZIndex + this.props.modals.length - 1,
+              backgroundColor: `rgba(0,0,0,${this.props.coverOpacity})`
+            }}
+          />
           {this.props.modals.map((modal, idx) =>
             this.modalRenderer(modal, idx)
           )}

@@ -70,7 +70,7 @@ class MyApp extends React.Component {
               )
             }
           >
-            Close a modal
+            Close a random modal
           </button>
           <button onClick={() => this.dispatch(modalActions.closeAllModals())}>
             Close all modals
