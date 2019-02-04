@@ -12,21 +12,19 @@ module.exports = {
     path: path.join(__dirname, './demo/dist'),
     publicPath: '/dist/'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
     rules: [
       // js
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        include: [path.join(__dirname, 'demo')]
+        include: [path.join(__dirname, 'demo'), path.join(__dirname, 'src')]
       },
       // CSS
       {
         test: /\.styl$/,
-        include: [path.join(__dirname, 'demo')],
+        include: [path.join(__dirname, 'demo'), path.join(__dirname, 'src')],
         use: [
           'style-loader',
           'css-loader',
@@ -43,7 +41,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        include: [path.join(__dirname, 'demo')],
+        include: [path.join(__dirname, 'demo'), path.join(__dirname, 'src')],
         use: [
           'style-loader',
           'css-loader',

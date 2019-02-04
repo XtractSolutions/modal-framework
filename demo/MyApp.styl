@@ -1,0 +1,28 @@
+@import '../src/styles/indexStyles.styl'
+
+html
+  width 100%
+  height 100%
+  overflow hidden
+  
+body
+  margin 0px
+  
+#root
+  width 100%
+  height 100%
+  
+.modal-area
+  width 100%
+  height 90%
+  
+.no-modal-area
+  width 100%
+  height 10%
+  display flex
+  justify-content center
+  border 1px solid black
+  
+//override default cover to allow access to controls
+#modal-framework-default.modal-screen-cover
+  height 90% !important 

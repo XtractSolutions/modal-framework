@@ -4,7 +4,10 @@ function modalReducer(state = [], action) {
   let address = null
   switch (action.type) {
     case 'open_modal':
-      if (action.address && (typeof action.address === 'string' || action.address instanceof String)) {
+      if (
+        action.address &&
+        (typeof action.address === 'string' || action.address instanceof String)
+      ) {
         address = action.address
       } else {
         for (var i = 0; i < 10; i++) {
@@ -19,18 +22,28 @@ function modalReducer(state = [], action) {
           action.address(address)
         }
       }
+      // this modals position should be the maximum modals position + 1
+      const maxStackPosition = Math.max.apply(
+        Math,
+        state.map(modal => {
+          return modal.stackPosition
+        })
+      )
+      const thisStackPosition =
+        maxStackPosition === -1 * Infinity ? 1 : maxStackPosition + 1
+
       const newModal = {
         address: address,
-        config: { ...action.modalConfig }
+        config: { ...action.modalConfig },
+        stackPosition: thisStackPosition
       }
-      return [
-        ...state,
-        newModal
-      ]
+      return [...state, newModal]
     case 'close_modal':
       address = action.address
       if (address == null) {
-        throw new Error('close modal action dispatched without required address property.')
+        throw new Error(
+          'close modal action dispatched without required address property.'
+        )
       }
       return state.filter(modal => modal.address !== address)
     case 'close_all_modals':
@@ -41,4 +54,3 @@ function modalReducer(state = [], action) {
 }
 
 export default modalReducer
-
