@@ -14,7 +14,12 @@ class DefaultModal extends React.PureComponent {
     } = this.props
     const { title = '', content = '', closable = true } = config
     return (
-      <div ref={getModalRef} style={style} className="modal-container">
+      <div
+        id="default-modal"
+        ref={getModalRef}
+        style={style}
+        className="modal-container"
+      >
         <div className="list-component list-group">
           <div className="list-group-item active">
             <div className="header">
