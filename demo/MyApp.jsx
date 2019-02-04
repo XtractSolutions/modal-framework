@@ -66,6 +66,18 @@ class MyApp extends React.Component {
           <button
             onClick={() =>
               this.dispatch(
+                modalActions.openModal(
+                  'named_modal', // will console.log the auto generated modal id
+                  { ...this.makeRandomModalConfig(), title: 'Named modal' }
+                )
+              )
+            }
+          >
+            open/replace named modal
+          </button>
+          <button
+            onClick={() =>
+              this.dispatch(
                 modalActions.closeModal(this.getRandomOpenModal()) // wont work yet but lets pick a random
               )
             }
