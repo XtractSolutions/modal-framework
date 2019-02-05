@@ -1,7 +1,6 @@
 import React from 'react'
 import { expect } from 'chai'
 import { mount } from 'enzyme'
-import DefaultModal from '../../src/components/DefaultModal.jsx'
 import ModalFramework from '../../src/components/ModalFramework.jsx'
 
 describe('ModalFramework component', () => {

@@ -1,7 +1,6 @@
 import React from 'react'
 import { expect } from 'chai'
 import { mount } from 'enzyme'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import DefaultModal from '../../src/components/DefaultModal.jsx'
 
 describe('DefaultModal component', () => {
@@ -41,7 +40,7 @@ describe('DefaultModal component', () => {
                 <div className="corner-icons" />
                 <h4 className="list-group-title">{'test title'}</h4>
                 <div className="corner-icons">
-                  <FontAwesomeIcon icon={['fas', 'times']} />
+                  <div className="close-button">&#10006;</div>
                 </div>
               </div>
             </div>

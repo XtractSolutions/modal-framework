@@ -1,5 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class DefaultModal extends React.PureComponent {
   // closeSelf was passed in my the framework and can be used to close
@@ -27,10 +26,9 @@ class DefaultModal extends React.PureComponent {
               <h4 className="list-group-title">{title}</h4>
               <div className="corner-icons">
                 {!closable ? null : (
-                  <FontAwesomeIcon
-                    icon={['fas', 'times']}
-                    onClick={this.closeHandler}
-                  />
+                  <div className="close-button" onClick={this.closeHandler}>
+                    &#10006;
+                  </div>
                 )}
               </div>
             </div>
