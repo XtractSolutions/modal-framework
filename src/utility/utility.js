@@ -10,13 +10,6 @@ export function makeId(length = 5) {
   return text
 }
 
-// https://stackoverflow.com/questions/5999998/how-can-i-check-if-a-javascript-variable-is-function-type
-export function isFunction(functionToCheck) {
-  return (
-    functionToCheck && {}.toString.call(functionToCheck) === '[object Function]'
-  )
-}
-
 export function makeUniqueId(length = 5, state = []) {
   for (var i = 0; i < 10; i++) {
     // look for a uniuqe id
@@ -27,4 +20,11 @@ export function makeUniqueId(length = 5, state = []) {
     }
   }
   throw new Error('Unable to generate unique address. To many modals open.')
+}
+
+// https://stackoverflow.com/questions/5999998/how-can-i-check-if-a-javascript-variable-is-function-type
+export function isFunction(functionToCheck) {
+  return (
+    functionToCheck && {}.toString.call(functionToCheck) === '[object Function]'
+  )
 }

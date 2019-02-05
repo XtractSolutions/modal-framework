@@ -46,7 +46,7 @@ class MyApp extends React.Component {
             startingZIndex={100}
             modals={this.state.modals}
             dispatch={this.dispatch}
-            coverEnabled={false}
+            coverEnabled={true}
             coverOpacity={0.5}
           />
         </div>
@@ -77,9 +77,7 @@ class MyApp extends React.Component {
           </button>
           <button
             onClick={() =>
-              this.dispatch(
-                modalActions.closeModal(this.getRandomOpenModal()) // wont work yet but lets pick a random
-              )
+              this.dispatch(modalActions.closeModal(this.getRandomOpenModal()))
             }
           >
             Close a random modal

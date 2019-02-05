@@ -5,6 +5,7 @@ import { closeModal } from '../actions/modalActions'
 
 class ModalFramework extends React.Component {
   modalRenderer = (modal, idx) => {
+    // build tiling values
     const tile = {}
     const { tileConfig = {} } = this.props
     if (tileConfig.horizontal) {
@@ -15,6 +16,7 @@ class ModalFramework extends React.Component {
       const pixWidth = tileConfig.vertical.replace('px', '')
       tile.top = modal.stackPosition * pixWidth + 'px'
     }
+    // render modals
     if (React.Children.count(this.props.children) === 1) {
       return React.cloneElement(this.props.children, {
         key: modal.address,
