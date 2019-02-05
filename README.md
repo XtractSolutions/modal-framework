@@ -40,6 +40,7 @@ and provide the following props
 |modals | yes | [] | Your applications state array of modals (might be state, redux, context, etc)|
 |dispatch | yes | n/a | A function which accepts action objects and dispatches them to your reducers.|
 |`child` | no | n/a | exactly one optional child component can be included. This component will provide the template for all modal windows.|
+| tileConfig | no | n/a | an object with properties `vertical` and/or `horizontal` and pixel values that should be used to offset the location of each additional modal when multiple modals are opened (eg `{horizontal: '10px', vertical: '10px'}`)
 
 3) Import actions to make them available within your application.
 For redux:
