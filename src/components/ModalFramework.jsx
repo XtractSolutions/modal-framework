@@ -57,7 +57,13 @@ class ModalFramework extends React.Component {
         </div>
       )
     } else {
-      return null
+      return (
+        <div id="modal-framework-default">
+          {this.props.modals.map((modal, idx) =>
+            this.modalRenderer(modal, idx)
+          )}
+        </div>
+      )
     }
   }
 }

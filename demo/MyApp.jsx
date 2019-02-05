@@ -46,7 +46,7 @@ class MyApp extends React.Component {
             startingZIndex={100}
             modals={this.state.modals}
             dispatch={this.dispatch}
-            coverEnabled={true}
+            coverEnabled={false}
             coverOpacity={0.5}
           />
         </div>

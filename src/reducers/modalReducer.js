@@ -1,6 +1,6 @@
-import { isFunction, makeId } from '../utility/utility.js'
+import { isFunction, makeUniqueId } from '../utility/utility.js'
 
-function modalReducer(state = [], action) {
+function modalReducer(state = [], action = {}) {
   let address = null
   switch (action.type) {
     case 'open_modal':
@@ -10,14 +10,7 @@ function modalReducer(state = [], action) {
       ) {
         address = action.address
       } else {
-        for (var i = 0; i < 10; i++) {
-          // look for a uniuqe id
-          address = makeId(10)
-          if (state.find(modal => modal.address === address) === -1) {
-            // we found an unused address
-            break
-          }
-        }
+        address = makeUniqueId(10, state)
         if (isFunction(action.address)) {
           action.address(address)
         }
