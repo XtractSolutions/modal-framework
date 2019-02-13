@@ -2,3 +2,5 @@ import './styles/indexStyles.styl'
 export modalActions from './actions/modalActions'
 export modalReducer from './reducers/modalReducer'
 export ModalFramework from './components/ModalFramework.jsx'
+
+//# sourceMappingURL=../dist/modal-framework.js.map

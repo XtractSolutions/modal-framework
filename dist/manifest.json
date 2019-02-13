@@ -1,0 +1,18 @@
+{
+  "modal-framework.js": {
+    "src": "modal-framework.js",
+    "integrity": "sha256-hOYZEV2jwsScjabuaa88rvpDQ/5QmoJQ8roCBXCwPbk= sha384-bJEJfE1e7PstYGNwtyDXhZW5CBsx6u4BpXx7DnBa4JyQlMSoO/LbOuvawjFg5zCd sha512-u6XAERyr+s0/dqW59AsOuhEj46YG98fLvOp7N5YQR3OKM4dLOsTuc/cXn2gMA2rX7feUbLuMTD7wwVEMEJ7raA=="
+  },
+  "modal-framework.js.map": {
+    "src": "modal-framework.js.map",
+    "integrity": "sha256-m6PZsLNeDgJeC7iVF7LPJd1fMZXEpT9NWuuf82AhGso= sha384-8TtQIvm9Mxm72Wn+RXT/sXAgchapntGq9I5wvQi3peFK+Re0rSNbMTgOe4KIIeKV sha512-nU1bmXIRyTRHn7f9J9ePB/JqNJfw8kyqGt/sjkKueebF6ONzoU96JV39vF5z6JO4z9VxZmswHzksqhD6s7zyKg=="
+  },
+  "modal-framework.min.js": {
+    "src": "modal-framework.min.js",
+    "integrity": "sha256-P524VRkaXuHAQp+SWy0wnJpqBuyl5DaFIuvN8oRU4+c= sha384-dOFu2H3NT+QgvNEM+/cfDbaFpNayRk0FDTRZ7rWQusSbzyhfqRW3/KIuil04kLZI sha512-LqD/4Hotrgucl/jcOblnK1g1bBQEcIis5Ab0jIWOBUCdUiSviM5YL+lE2Om4gl0+oAdzzS7GB1SCKfL2P9m6rg=="
+  },
+  "modal-framework.min.js.map": {
+    "src": "modal-framework.min.js.map",
+    "integrity": "sha256-AHfnCzZrtA/3O8dOjcNT1qeaGcS0Zwtczpqm9KrRfDo= sha384-SQk0Ae3f05v5h7CUt0UfGzdc6OtGQhm6auJIFFYkTLcaYfmtv00YonIMQGEwEvZI sha512-nx1P2JF7retoFt9rjGKAFSzVYMst/39gXqMT4OMWV9MWd0N0w6HJq6/DYmPSOYWUjGTkOyNf0pOQRZVfxDwYYg=="
+  }
+}

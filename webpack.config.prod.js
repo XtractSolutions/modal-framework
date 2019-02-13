@@ -1,6 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
-var autoprefixer = require('autoprefixer')
+require('webpack')
+const path = require('path')
+const autoprefixer = require('autoprefixer')
+const WebpackAssetsManifest = require('webpack-assets-manifest')
 
 module.exports = {
   mode: 'production',
@@ -12,9 +13,14 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
-    library: 'modalFramework',
+    library: 'modal-framework',
     libraryTarget: 'umd'
   },
+  plugins: [
+    new WebpackAssetsManifest({
+      integrity: true
+    })
+  ],
   externals: [
     {
       react: {
@@ -30,6 +36,12 @@ module.exports = {
   },
   module: {
     rules: [
+      // source maps
+      {
+        test: /\.js$/,
+        use: ['source-map-loader'],
+        enforce: 'pre'
+      },
       // js
       {
         test: /\.jsx?$/,
