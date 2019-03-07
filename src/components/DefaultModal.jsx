@@ -12,6 +12,7 @@ class DefaultModal extends React.PureComponent {
       ...rest
     } = this.props
     const { title = '', content = '', closable = true } = config
+    const { type = {} } = content
     return (
       <div
         id="default-modal"
@@ -37,10 +38,9 @@ class DefaultModal extends React.PureComponent {
             {// rather than simply placing content here, doing it this
             // way allows the modal to accept jsx content and pass down
             // the additional props available here (primarily closeSelf())
-            content &&
-            (typeof content === 'string' || content instanceof String)
-              ? content
-              : React.cloneElement(content, { ...rest })}
+            content && typeof type === 'function' // this indicates jsx)
+              ? React.cloneElement(content, { ...rest })
+              : content}
           </div>
         </div>
       </div>

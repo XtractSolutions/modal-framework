@@ -1,18 +1,18 @@
 {
   "modal-framework.js": {
     "src": "modal-framework.js",
-    "integrity": "sha256-JAwRNHhTakl6TSkJyD/a98O0M/3ubu5w458qg79FSAE= sha384-7SR3If22W1eHPd4X2tfs6uA9IKj49O8/61kOf8qArP4diPj/f2QPxvFfQqPrdoP9 sha512-goBXVWYyY4C1rMulJ8F4cXrFvUKy9GlNonP2X7kVttZnJWHtCKcp14EeLV0Zbtu/jhOVxRk+Ipf755FhGuWkaw=="
+    "integrity": "sha256-FYumLCdT4KDMlgp4UWQdhkxsHhfsRP8XjvIH68v25f8= sha384-3gOGb782WYho3DTVClN8Kzi4g2Oshl9ZfEDx/basYRgwPjs5uTgBUFgiBMUoX2Pn sha512-X0e+Nv+Pn34VrtgUeMFxtsIYZY0V+5kd9uBdIlBpcTHC74Ay0WLx5icy9Aa5Zv4xxyM3i2hpYmTZeLfe7hbdYQ=="
   },
   "modal-framework.js.map": {
     "src": "modal-framework.js.map",
-    "integrity": "sha256-zizHFLjitq0m6ARB9hCrk9PJuwg9FGw2C/WLx0uzPVM= sha384-rc06rKs936jhT3rDXjciewfD8YUZrmxehfJSjl3VPBhRnqjQgiu3Z4CqGhcAP7+A sha512-1cUXQbNtqQinLC7/SmyHl1zX2WIaCzjZYUw2fcvPbsHKDmUXbsr/AYH4FN/3B8Yyb/Pi1+FsXBlhz4FUYrX/JA=="
+    "integrity": "sha256-H03x+SDatv75d3bLp4fskiCsHlfqbyYqkxKHN8/PYH4= sha384-XyNLtkWGx5XEMvAGumqxk/MfDNM5CcfU61vIM8iqcj7OdyX9JZin2hPETMX2i98t sha512-ssjyadoUZr8UKB086mx6I7y6UTHuBKoCuC/xv2lI3eGF273V7ybNMCrj45rGowzscUrUAIlG9gG7OKcMmWo0KQ=="
   },
   "modal-framework.min.js": {
     "src": "modal-framework.min.js",
-    "integrity": "sha256-V5pIMN/r7JTj4Kp+rRafFSkxEGjKlAXdwh+3ZQSa8N4= sha384-jyQ2jsmssb/T4tzo2CwPTVQO85TOH/0/5dd3h2S75jx2fddfPRa58e4aZ3pD+VcM sha512-d0ZkWshYSxDch/8LABpxiqZlow2hMZG5FH84v74RoMEqr0+ZPJPP/x6XFobGYpowgT6arsFx+75S/HWl3oKPGw=="
+    "integrity": "sha256-Gp0bGvZOxaE2rtsFGDq3RKJX3c9oAgjjEAp1N2I3cKw= sha384-bWOJDfaVAzVT0QNIIi20pMJo5NKKpQoo2FKjE890nqH52rUF95sJ+2CseTdGavHy sha512-qzU54PyHmjZMY892ZWOl0UH90yDRYh0HbRVtosFhRQr7IvueEQGSiu+JBoYDtY0bwc00uDPwVDvt8HVuT3/Uug=="
   },
   "modal-framework.min.js.map": {
     "src": "modal-framework.min.js.map",
-    "integrity": "sha256-Wp68CQsASYgUDutHWfegcW3ewNpNi7jiqyVbaBdn8NY= sha384-9qD6WJJmKoFSf45vvyTinzbxWvC1y4qHgFL3RJ4ZaAu0ibeN54bp8tltPuW2s574 sha512-g4ViIljn83/mjJWAiZgXGgZ69L0I0r47Pwo/8+xP0bSOliSlfmBDzZSqewUZdyWwmmTtyMutI2pX+oZXk7ZKKA=="
+    "integrity": "sha256-gutAcZ46oO6Rn1s9bGafsPTP+XECFEI9ILVTkj/DiRI= sha384-0WT/7m6A8uChq4nRiFHhtCdVumcqe8rdrAB50F9CImco3pCpggsQgskMvf7fq4GV sha512-16Gba8YyozmSCT5CdCuHO7L3wRIgFWm9voJ4WOx3yUyKAfF76Re1BjYhGWSZce5lWngWbChDLW4qMwzHfMgt/A=="
   }
 }
