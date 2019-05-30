@@ -18,11 +18,13 @@
     "url": "https://github.com/xtractsolutions/modal-framework/issues"
   },
   "homepage": "https://github.com/xtractsolutions/modal-framework#readme",
-  "dependencies": {
+  "peerDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.7.0"
   },
   "devDependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",
