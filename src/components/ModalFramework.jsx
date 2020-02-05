@@ -37,6 +37,11 @@ class ModalFramework extends React.Component {
       )
     }
   }
+  handleMouseDownCapture = (e) => {
+    // don't cause what's underneath to lose focus
+    e.preventDefault()
+    e.stopPropagation()
+  }
   render() {
     if (
       this.props.coverEnabled &&
@@ -52,6 +57,7 @@ class ModalFramework extends React.Component {
               zIndex: this.props.startingZIndex + this.props.modals.length - 1,
               backgroundColor: `rgba(0,0,0,${this.props.coverOpacity})`
             }}
+            onMouseDownCapture={this.handleMouseDownCapture}
           />
           {this.props.modals.map((modal, idx) =>
             this.modalRenderer(modal, idx)
