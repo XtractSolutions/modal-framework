@@ -1,18 +1,18 @@
 {
   "modal-framework.js": {
     "src": "modal-framework.js",
-    "integrity": "sha256-ObM3ehdPUcKpYAajP2+OX6fxm3kvcntKmKofolyFfd0= sha384-NR3n96ypdiOCbgWNhkquZG0vTOyKftUIeKPCzU8xe6Sht4Rw7P8KwHgyCi4mMDY2 sha512-K3TjVO/aXA3RRSt4Xes+mVhF/JRpJFJk7V8gPp3Ftj+V159ojW0BnJnehQ3zTHTYEY0lzuIgMpME1AeiPLkiFw=="
+    "integrity": "sha256-zGZecbRAJs/OUpzpia9zfI2/7yZ7deKaA96mZprnKx8= sha384-MPmbkr0Exfac1vmD7bzLqwsoj0TDxblbj2clPBGecpaQR/3kpPgD6E+oc7R0e4mM sha512-YF6ezwteXvPRDLohnnX2CkLy1AmhzQVolQ38APXbyLFDYeLHWFh1OdwXx4gGdgRGM86l0ano5M+7METSDzw0vg=="
   },
   "modal-framework.js.map": {
     "src": "modal-framework.js.map",
-    "integrity": "sha256-as2/fsBXeSH2K8Eog/qS2rSre5VDbOmxu10d19h0b+0= sha384-hLv7JObbQ9ODqm+qYe1K+/kHM3p3PXp4D2cIXfPZTIt4el5vYRTp3jTuKLxOlbBU sha512-jYhD03kQ0a6QY/YK+wt8v62p7/B7SJ/XLeFNbyG2BO2a+TjvLA4ZtTRhs5lbwJvgrjQ+VnOMbBkvvJlHZNLbng=="
+    "integrity": "sha256-4w60K4gU/D43HvRk2MbK6qHCTjk88nglHQkg69qikw4= sha384-RfOtrrbERjwoO4ipCxakKn2lsSNdVQDRL8jJLpaDF/PQth6wwx394aP4qpPGjksz sha512-A0PXGpO8WJy9YrYPckL7yYiMikhemSdr2B7oWhMIMKRQfzbkG7ax5SfE/WRI1s9NByG7fZcjF86XgwICUSCcXQ=="
   },
   "modal-framework.min.js": {
     "src": "modal-framework.min.js",
-    "integrity": "sha256-5MGT0htdaL+diH7i7cuQHjzrSjv2b3edSzppNWwZZvs= sha384-lpbgKkpawWGsN1HCsUrZAf5lqDE67NOb87euG1GGjyyFGAvHmOnZa5Sn/uAij25A sha512-NrK7M3GuOqSG7Bds0+PqmQP8YskK2STb9TXuQb+ATGKB1G6VMsj0TLsDrAN2ru3+MpPtKTEwx4BAmc3g2SLuBQ=="
+    "integrity": "sha256-R0Jdyak2RWcl7ODPcTpzO4iK5jQh4kn9Yu64309NuF0= sha384-nVie+RnCvIK6dmuDV0bCZukugkboTFFI0VUDkR6nKA+qW5QQaxIHXhyH4ZTI8pTb sha512-5gdRVVERXfGFEcTjfWuv8P7fcGe37IJINRegM0BfsQWjkxqbnbhmLGPs/7yMeIeSibrMGvHW4zXKizNQxhMHHQ=="
   },
   "modal-framework.min.js.map": {
     "src": "modal-framework.min.js.map",
-    "integrity": "sha256-AkM5REJdZMwrOXYy6qIujhmBSfXbqb6SbzV/aEa5Oqg= sha384-vh/7Q4yrtqZeKP7e1+fR9cYykV2CA0VEOuNTztNNhy6D5oo1AAvyR89FypEKqiWp sha512-S/izF7TzWDDtSWLqPKgHW3mZMG0epwgWSCeVkRitbnp13GxL6itVcFbF0d2F8dIqWWh9ztlNEWt3PDWoeC3ZHg=="
+    "integrity": "sha256-SYkf28AvHuUCd9+/ObewPAPcz9bSy8Pu4kdjjsLlytQ= sha384-Wm2Sf1c1oCrV1iWhXfndTTuTQ8Z1vF86hEW+XwZEEScsyDS57IfHrb7TQh0SIK2p sha512-LWS9yu+azFHZ+pOXdzUNaegG92bkytecP79KME4MPtkt+4mekHUG57yzq2bEvsJy97GyBnJGIXp2sVyWQW4Nsg=="
   }
 }
