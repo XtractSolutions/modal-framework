@@ -1,2 +1,1144 @@
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("react")):"function"==typeof define&&define.amd?define(["react"],t):"object"==typeof exports?exports["modal-framework"]=t(require("react")):e["modal-framework"]=t(e.React)}(window,(function(e){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=8)}([function(t,n){t.exports=e},function(e,t,n){e.exports=n(6)()},function(e,t,n){var r=n(3),o=n(4);"string"==typeof(o=o.__esModule?o.default:o)&&(o=[[e.i,o,""]]);var a={insert:"head",singleton:!1},i=(r(o,a),o.locals?o.locals:{});e.exports=i},function(e,t,n){"use strict";var r,o=function(){return void 0===r&&(r=Boolean(window&&document&&document.all&&!window.atob)),r},a=function(){var e={};return function(t){if(void 0===e[t]){var n=document.querySelector(t);if(window.HTMLIFrameElement&&n instanceof window.HTMLIFrameElement)try{n=n.contentDocument.head}catch(e){n=null}e[t]=n}return e[t]}}(),i=[];function c(e){for(var t=-1,n=0;n<i.length;n++)if(i[n].identifier===e){t=n;break}return t}function l(e,t){for(var n={},r=[],o=0;o<e.length;o++){var a=e[o],l=t.base?a[0]+t.base:a[0],s=n[l]||0,u="".concat(l," ").concat(s);n[l]=s+1;var f=c(u),d={css:a[1],media:a[2],sourceMap:a[3]};-1!==f?(i[f].references++,i[f].updater(d)):i.push({identifier:u,updater:y(d,t),references:1}),r.push(u)}return r}function s(e){var t=document.createElement("style"),r=e.attributes||{};if(void 0===r.nonce){var o=n.nc;o&&(r.nonce=o)}if(Object.keys(r).forEach((function(e){t.setAttribute(e,r[e])})),"function"==typeof e.insert)e.insert(t);else{var i=a(e.insert||"head");if(!i)throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");i.appendChild(t)}return t}var u,f=(u=[],function(e,t){return u[e]=t,u.filter(Boolean).join("\n")});function d(e,t,n,r){var o=n?"":r.media?"@media ".concat(r.media," {").concat(r.css,"}"):r.css;if(e.styleSheet)e.styleSheet.cssText=f(t,o);else{var a=document.createTextNode(o),i=e.childNodes;i[t]&&e.removeChild(i[t]),i.length?e.insertBefore(a,i[t]):e.appendChild(a)}}function p(e,t,n){var r=n.css,o=n.media,a=n.sourceMap;if(o?e.setAttribute("media",o):e.removeAttribute("media"),a&&btoa&&(r+="\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(a))))," */")),e.styleSheet)e.styleSheet.cssText=r;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(r))}}var m=null,b=0;function y(e,t){var n,r,o;if(t.singleton){var a=b++;n=m||(m=s(t)),r=d.bind(null,n,a,!1),o=d.bind(null,n,a,!0)}else n=s(t),r=p.bind(null,n,t),o=function(){!function(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e)}(n)};return r(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;r(e=t)}else o()}}e.exports=function(e,t){(t=t||{}).singleton||"boolean"==typeof t.singleton||(t.singleton=o());var n=l(e=e||[],t);return function(e){if(e=e||[],"[object Array]"===Object.prototype.toString.call(e)){for(var r=0;r<n.length;r++){var o=c(n[r]);i[o].references--}for(var a=l(e,t),s=0;s<n.length;s++){var u=c(n[s]);0===i[u].references&&(i[u].updater(),i.splice(u,1))}n=a}}}},function(e,t,n){(t=n(5)(!1)).push([e.i,"#modal-framework-default #default-modal .close-button {\n  cursor: pointer;\n}\n#modal-framework-default #default-modal .header {\n  background-color: #ffd700;\n  height: 5vh;\n  display: flex;\n  align-items: center;\n  font-size: 1.2em;\n  border-radius: 5px 5px 0px 0px;\n  display: flex;\n  justify-content: space-between;\n}\n#modal-framework-default #default-modal .header .corner-icons {\n  align-self: flex-start;\n  padding: 5px;\n}\n#modal-framework-default #default-modal .modal-content {\n  display: flex;\n  padding: 20px;\n  border-radius: 0px;\n  min-height: 150px;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: stretch;\n  font-size: 1.25em;\n  overflow: visible;\n  box-shadow: none !important;\n  white-space: pre-wrap;\n}\n#modal-framework-default #default-modal .list-group {\n  margin-bottom: 0px;\n}\n#modal-framework-default #default-modal .list-group-item {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n#modal-framework-default #default-modal .corner-icons {\n  display: flex;\n  align-items: center;\n}\n#modal-framework-default #default-modal .btn-group {\n  padding-top: 10px;\n  display: flex;\n  justify-content: center;\n  padding: 10px;\n}\n#modal-framework-default .modal-screen-cover {\n  visibility: visible;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: all 0.25s;\n}\n#modal-framework-default .modal-container {\n  overflow: visible;\n  width: 60%;\n  margin: 100px auto;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  transition: 0.5s ease-in-out;\n  border-radius: 5px;\n  padding: 0px;\n  background: #fff;\n  border: 2px solid #000;\n  left: 0%;\n  right: 0%;\n  position: absolute;\n  top: 0px;\n}\n",""]),e.exports=t},function(e,t,n){"use strict";e.exports=function(e){var t=[];return t.toString=function(){return this.map((function(t){var n=function(e,t){var n=e[1]||"",r=e[3];if(!r)return n;if(t&&"function"==typeof btoa){var o=(i=r,c=btoa(unescape(encodeURIComponent(JSON.stringify(i)))),l="sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(c),"/*# ".concat(l," */")),a=r.sources.map((function(e){return"/*# sourceURL=".concat(r.sourceRoot||"").concat(e," */")}));return[n].concat(a).concat([o]).join("\n")}var i,c,l;return[n].join("\n")}(t,e);return t[2]?"@media ".concat(t[2]," {").concat(n,"}"):n})).join("")},t.i=function(e,n,r){"string"==typeof e&&(e=[[null,e,""]]);var o={};if(r)for(var a=0;a<this.length;a++){var i=this[a][0];null!=i&&(o[i]=!0)}for(var c=0;c<e.length;c++){var l=[].concat(e[c]);r&&o[l[0]]||(n&&(l[2]?l[2]="".concat(n," and ").concat(l[2]):l[2]=n),t.push(l))}},t}},function(e,t,n){"use strict";var r=n(7);function o(){}function a(){}a.resetWarningCache=o,e.exports=function(){function e(e,t,n,o,a,i){if(i!==r){var c=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw c.name="Invariant Violation",c}}function t(){return e}e.isRequired=e;var n={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,elementType:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t,checkPropTypes:a,resetWarningCache:o};return n.PropTypes=n,n}},function(e,t,n){"use strict";e.exports="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"},function(e,t,n){"use strict";n.r(t);n(2);function r(e){return{type:"close_modal",address:e}}var o={openModal:function(e,t){return{type:"open_modal",address:e,modalConfig:t}},closeModal:r,closeAllModals:function(){return{type:"close_all_modals"}}};function a(e){return(a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function i(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:5,t="",n="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",r=0;r<e;r++)t+=n.charAt(Math.floor(Math.random()*n.length));return t}function c(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:5,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:[],n=function(){var n=i(e);if(void 0===t.find((function(e){return e.address===n})))return{v:n}},r=0;r<10;r++){var o=n();if("object"===a(o))return o.v}throw new Error("Unable to generate unique address. To many modals open.")}function l(e){return e&&"[object Function]"==={}.toString.call(e)}function s(e){return function(e){if(Array.isArray(e)){for(var t=0,n=new Array(e.length);t<e.length;t++)n[t]=e[t];return n}}(e)||function(e){if(Symbol.iterator in Object(e)||"[object Arguments]"===Object.prototype.toString.call(e))return Array.from(e)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function u(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function f(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?u(Object(n),!0).forEach((function(t){d(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):u(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function d(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var p=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=null;switch(t.type){case"open_modal":t.address&&("string"==typeof t.address||t.address instanceof String)?n=t.address:(n=c(10,e),l(t.address)&&t.address(n));var r=Math.max.apply(Math,e.map((function(e){return e.stackPosition}))),o=r===-1/0?1:r+1,a=e.find((function(e){return e.address===n})),i=void 0===a?{address:n,config:f({},t.modalConfig),stackPosition:o}:f({},a,{config:f({},a.config,{},t.modalConfig)}),u=void 0===a?e:e.filter((function(e){return e.address!==i.address}));return[].concat(s(u),[i]);case"close_modal":if(null==(n=t.address))throw new Error("close modal action dispatched without required address property.");return e.filter((function(e){return e.address!==n}));case"close_all_modals":return[];default:return e}},m=n(0),b=n.n(m),y=n(1),h=n.n(y),v="/home/cblack/Work/xtract/modal-framework/src/components/DefaultModal.jsx";function g(e){return(g="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function O(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function w(e,t){if(null==e)return{};var n,r,o=function(e,t){if(null==e)return{};var n,r,o={},a=Object.keys(e);for(r=0;r<a.length;r++)n=a[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(e,t);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);for(r=0;r<a.length;r++)n=a[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}function _(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function j(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function x(e,t){return!t||"object"!==g(t)&&"function"!=typeof t?S(e):t}function P(e){return(P=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function S(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function k(e,t){return(k=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function E(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var N=function(e){function t(){var e,n;_(this,t);for(var r=arguments.length,o=new Array(r),a=0;a<r;a++)o[a]=arguments[a];return E(S(n=x(this,(e=P(t)).call.apply(e,[this].concat(o)))),"closeHandler",(function(){return n.props.closeSelf()})),n}var n,r,o;return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&k(e,t)}(t,e),n=t,(r=[{key:"render",value:function(){var e=this.props,t=e.config,n=void 0===t?{}:t,r=e.style,o=void 0===r?{}:r,a=e.getModalRef,i=void 0===a?function(){return null}:a,c=w(e,["config","style","getModalRef"]),l=n.title,s=void 0===l?"":l,u=n.content,f=void 0===u?"":u,d=n.closable,p=void 0===d||d,m=f.type,y=void 0===m?{}:m;return b.a.createElement("div",{id:"default-modal",ref:i,style:o,className:"modal-container",__source:{fileName:v,lineNumber:17},__self:this},b.a.createElement("div",{className:"list-component list-group",__source:{fileName:v,lineNumber:23},__self:this},b.a.createElement("div",{className:"list-group-item active",__source:{fileName:v,lineNumber:24},__self:this},b.a.createElement("div",{className:"header",__source:{fileName:v,lineNumber:25},__self:this},b.a.createElement("div",{className:"corner-icons",__source:{fileName:v,lineNumber:26},__self:this}),b.a.createElement("h4",{className:"list-group-title",__source:{fileName:v,lineNumber:27},__self:this},s),b.a.createElement("div",{className:"corner-icons",__source:{fileName:v,lineNumber:28},__self:this},p?b.a.createElement("div",{className:"close-button",onClick:this.closeHandler,__source:{fileName:v,lineNumber:30},__self:this},"✖"):null))),b.a.createElement("div",{className:"modal-content",__source:{fileName:v,lineNumber:37},__self:this},f&&"function"==typeof y?b.a.cloneElement(f,function(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?O(Object(n),!0).forEach((function(t){E(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):O(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}({},c)):f)))}}])&&j(n.prototype,r),o&&j(n,o),t}(b.a.PureComponent),C="/home/cblack/Work/xtract/modal-framework/src/components/ModalFramework.jsx";function M(e){return(M="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function T(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function R(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?T(Object(n),!0).forEach((function(t){L(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):T(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function D(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function I(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function A(e,t){return!t||"object"!==M(t)&&"function"!=typeof t?U(e):t}function q(e){return(q=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function U(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function z(e,t){return(z=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function L(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var F=function(e){function t(){var e,n;D(this,t);for(var o=arguments.length,a=new Array(o),i=0;i<o;i++)a[i]=arguments[i];return L(U(n=A(this,(e=q(t)).call.apply(e,[this].concat(a)))),"modalRenderer",(function(e,t){var o={},a=n.props.tileConfig,i=void 0===a?{}:a;if(i.horizontal){var c=i.horizontal.replace("px","");o.left=e.stackPosition*c+"px"}if(i.vertical){var l=i.vertical.replace("px","");o.top=e.stackPosition*l+"px"}return 1===b.a.Children.count(n.props.children)?b.a.cloneElement(n.props.children,{key:e.address,style:R({zIndex:n.props.startingZIndex+t},o),modalAddress:e.address,config:e.config,closeSelf:function(){return n.props.dispatch(r(e.address))}}):b.a.createElement(N,{key:e.address,style:R({zIndex:n.props.startingZIndex+t},o),config:e.config,modalAddress:e.adddress,closeSelf:function(){return n.props.dispatch(r(e.address))},__source:{fileName:C,lineNumber:30},__self:this})})),L(U(n),"handleMouseDownCapture",(function(e){e.preventDefault(),e.stopPropagation()})),n}var n,o,a;return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&z(e,t)}(t,e),n=t,(o=[{key:"render",value:function(){var e=this;return this.props.coverEnabled&&this.props.modals&&this.props.modals.length>=1?b.a.createElement("div",{id:"modal-framework-default",__source:{fileName:C,lineNumber:52},__self:this},b.a.createElement("div",{className:"modal-screen-cover",style:{zIndex:this.props.startingZIndex+this.props.modals.length-1,backgroundColor:"rgba(0,0,0,".concat(this.props.coverOpacity,")")},onMouseDownCapture:this.handleMouseDownCapture,__source:{fileName:C,lineNumber:53},__self:this}),this.props.modals.map((function(t,n){return e.modalRenderer(t,n)}))):b.a.createElement("div",{id:"modal-framework-default",__source:{fileName:C,lineNumber:69},__self:this},this.props.modals.map((function(t,n){return e.modalRenderer(t,n)})))}}])&&I(n.prototype,o),a&&I(n,a),t}(b.a.Component),H=F;F.propTypes={children:h.a.object,modals:h.a.array.isRequired,dispatch:h.a.func.isRequired,startingZIndex:h.a.number,coverOpacity:h.a.number,coverEnabled:h.a.bool,tileConfig:h.a.object},F.defaultProps={startingZIndex:1e6,coverOpacity:.5,coverEnabled:!0};var W=[];n.d(t,"modalActions",(function(){return o})),n.d(t,"modalReducer",(function(){return p})),n.d(t,"ModalFramework",(function(){return H})),n.d(t,"modalStore",(function(){return W}))}])}));
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("react"));
+	else if(typeof define === 'function' && define.amd)
+		define(["react"], factory);
+	else if(typeof exports === 'object')
+		exports["modal-framework"] = factory(require("react"));
+	else
+		root["modal-framework"] = factory(root["React"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE__0__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__0__;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (false) { var throwOnDirectAccess, ReactIs; } else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(6)();
+}
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(3);
+            var content = __webpack_require__(4);
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isOldIE = function isOldIE() {
+  var memo;
+  return function memorize() {
+    if (typeof memo === 'undefined') {
+      // Test for IE <= 9 as proposed by Browserhacks
+      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+      // Tests for existence of standard globals is to allow style-loader
+      // to operate correctly into non-standard environments
+      // @see https://github.com/webpack-contrib/style-loader/issues/177
+      memo = Boolean(window && document && document.all && !window.atob);
+    }
+
+    return memo;
+  };
+}();
+
+var getTarget = function getTarget() {
+  var memo = {};
+  return function memorize(target) {
+    if (typeof memo[target] === 'undefined') {
+      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+        try {
+          // This will throw an exception if access to iframe is blocked
+          // due to cross-origin restrictions
+          styleTarget = styleTarget.contentDocument.head;
+        } catch (e) {
+          // istanbul ignore next
+          styleTarget = null;
+        }
+      }
+
+      memo[target] = styleTarget;
+    }
+
+    return memo[target];
+  };
+}();
+
+var stylesInDom = [];
+
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+
+  for (var i = 0; i < stylesInDom.length; i++) {
+    if (stylesInDom[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var index = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3]
+    };
+
+    if (index !== -1) {
+      stylesInDom[index].references++;
+      stylesInDom[index].updater(obj);
+    } else {
+      stylesInDom.push({
+        identifier: identifier,
+        updater: addStyle(obj, options),
+        references: 1
+      });
+    }
+
+    identifiers.push(identifier);
+  }
+
+  return identifiers;
+}
+
+function insertStyleElement(options) {
+  var style = document.createElement('style');
+  var attributes = options.attributes || {};
+
+  if (typeof attributes.nonce === 'undefined') {
+    var nonce =  true ? __webpack_require__.nc : undefined;
+
+    if (nonce) {
+      attributes.nonce = nonce;
+    }
+  }
+
+  Object.keys(attributes).forEach(function (key) {
+    style.setAttribute(key, attributes[key]);
+  });
+
+  if (typeof options.insert === 'function') {
+    options.insert(style);
+  } else {
+    var target = getTarget(options.insert || 'head');
+
+    if (!target) {
+      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+    }
+
+    target.appendChild(style);
+  }
+
+  return style;
+}
+
+function removeStyleElement(style) {
+  // istanbul ignore if
+  if (style.parentNode === null) {
+    return false;
+  }
+
+  style.parentNode.removeChild(style);
+}
+/* istanbul ignore next  */
+
+
+var replaceText = function replaceText() {
+  var textStore = [];
+  return function replace(index, replacement) {
+    textStore[index] = replacement;
+    return textStore.filter(Boolean).join('\n');
+  };
+}();
+
+function applyToSingletonTag(style, index, remove, obj) {
+  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
+
+  /* istanbul ignore if  */
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = replaceText(index, css);
+  } else {
+    var cssNode = document.createTextNode(css);
+    var childNodes = style.childNodes;
+
+    if (childNodes[index]) {
+      style.removeChild(childNodes[index]);
+    }
+
+    if (childNodes.length) {
+      style.insertBefore(cssNode, childNodes[index]);
+    } else {
+      style.appendChild(cssNode);
+    }
+  }
+}
+
+function applyToTag(style, options, obj) {
+  var css = obj.css;
+  var media = obj.media;
+  var sourceMap = obj.sourceMap;
+
+  if (media) {
+    style.setAttribute('media', media);
+  } else {
+    style.removeAttribute('media');
+  }
+
+  if (sourceMap && btoa) {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    while (style.firstChild) {
+      style.removeChild(style.firstChild);
+    }
+
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var singleton = null;
+var singletonCounter = 0;
+
+function addStyle(obj, options) {
+  var style;
+  var update;
+  var remove;
+
+  if (options.singleton) {
+    var styleIndex = singletonCounter++;
+    style = singleton || (singleton = insertStyleElement(options));
+    update = applyToSingletonTag.bind(null, style, styleIndex, false);
+    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+  } else {
+    style = insertStyleElement(options);
+    update = applyToTag.bind(null, style, options);
+
+    remove = function remove() {
+      removeStyleElement(style);
+    };
+  }
+
+  update(obj);
+  return function updateStyle(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
+        return;
+      }
+
+      update(obj = newObj);
+    } else {
+      remove();
+    }
+  };
+}
+
+module.exports = function (list, options) {
+  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  // tags it will allow on a page
+
+  if (!options.singleton && typeof options.singleton !== 'boolean') {
+    options.singleton = isOldIE();
+  }
+
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+
+    if (Object.prototype.toString.call(newList) !== '[object Array]') {
+      return;
+    }
+
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDom[index].references--;
+    }
+
+    var newLastIdentifiers = modulesToDom(newList, options);
+
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+
+      var _index = getIndexByIdentifier(_identifier);
+
+      if (stylesInDom[_index].references === 0) {
+        stylesInDom[_index].updater();
+
+        stylesInDom.splice(_index, 1);
+      }
+    }
+
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "#modal-framework-default #default-modal .close-button {\n  cursor: pointer;\n}\n#modal-framework-default #default-modal .header {\n  background-color: #ffd700;\n  height: 5vh;\n  display: flex;\n  align-items: center;\n  font-size: 1.2em;\n  border-radius: 5px 5px 0px 0px;\n  display: flex;\n  justify-content: space-between;\n}\n#modal-framework-default #default-modal .header .corner-icons {\n  align-self: flex-start;\n  padding: 5px;\n}\n#modal-framework-default #default-modal .modal-content {\n  display: flex;\n  padding: 20px;\n  border-radius: 0px;\n  min-height: 150px;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: stretch;\n  font-size: 1.25em;\n  overflow: visible;\n  box-shadow: none !important;\n  white-space: pre-wrap;\n}\n#modal-framework-default #default-modal .list-group {\n  margin-bottom: 0px;\n}\n#modal-framework-default #default-modal .list-group-item {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n#modal-framework-default #default-modal .corner-icons {\n  display: flex;\n  align-items: center;\n}\n#modal-framework-default #default-modal .btn-group {\n  padding-top: 10px;\n  display: flex;\n  justify-content: center;\n  padding: 10px;\n}\n#modal-framework-default .modal-screen-cover {\n  visibility: visible;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: all 0.25s;\n}\n#modal-framework-default .modal-container {\n  overflow: visible;\n  width: 60%;\n  margin: 100px auto;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  transition: 0.5s ease-in-out;\n  border-radius: 5px;\n  padding: 0px;\n  background: #fff;\n  border: 2px solid #000;\n  left: 0%;\n  right: 0%;\n  position: absolute;\n  top: 0px;\n}\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = __webpack_require__(7);
+
+function emptyFunction() {}
+function emptyFunctionWithReset() {}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+module.exports = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+    var err = new Error(
+      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+      'Use PropTypes.checkPropTypes() to call them. ' +
+      'Read more at http://fb.me/use-check-prop-types'
+    );
+    err.name = 'Invariant Violation';
+    throw err;
+  };
+  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  };
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./src/styles/indexStyles.styl
+var indexStyles = __webpack_require__(2);
+
+// CONCATENATED MODULE: ./src/actions/modalActions.js
+function openModal(address, modalConfig) {
+  return {
+    type: 'open_modal',
+    address: address,
+    // string or callback
+    modalConfig: modalConfig
+  };
+}
+function closeModal(address) {
+  return {
+    type: 'close_modal',
+    address: address
+  };
+}
+function closeAllModals() {
+  return {
+    type: 'close_all_modals'
+  };
+}
+/* harmony default export */ var modalActions = ({
+  openModal: openModal,
+  closeModal: closeModal,
+  closeAllModals: closeAllModals
+});
+// CONCATENATED MODULE: ./src/utility/utility.js
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+// https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+function makeId() {
+  var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
+  var text = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+
+  return text;
+}
+function makeUniqueId() {
+  var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
+  var state = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+
+  var _loop = function _loop() {
+    // look for a uniuqe id
+    var address = makeId(length);
+
+    if (state.find(function (modal) {
+      return modal.address === address;
+    }) === undefined) {
+      // we found an unused address
+      return {
+        v: address
+      };
+    }
+  };
+
+  for (var i = 0; i < 10; i++) {
+    var _ret = _loop();
+
+    if (_typeof(_ret) === "object") return _ret.v;
+  }
+
+  throw new Error('Unable to generate unique address. To many modals open.');
+} // https://stackoverflow.com/questions/5999998/how-can-i-check-if-a-javascript-variable-is-function-type
+
+function isFunction(functionToCheck) {
+  return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+}
+// CONCATENATED MODULE: ./src/reducers/modalReducer.js
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function modalReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var address = null;
+
+  switch (action.type) {
+    case 'open_modal':
+      if (action.address && (typeof action.address === 'string' || action.address instanceof String)) {
+        address = action.address;
+      } else {
+        address = makeUniqueId(10, state);
+
+        if (isFunction(action.address)) {
+          action.address(address);
+        }
+      } // this modals position should be the maximum modals position + 1
+
+
+      var maxStackPosition = Math.max.apply(Math, state.map(function (modal) {
+        return modal.stackPosition;
+      }));
+      var thisStackPosition = maxStackPosition === -1 * Infinity ? 1 : maxStackPosition + 1; // if we are updating a named modal we need to find it
+
+      var modal = state.find(function (modal) {
+        return modal.address === address;
+      }); // see if we have a named modal that already exists in which case
+      // we just need to update its config but nothing else.
+
+      var newModal = modal === undefined ? {
+        address: address,
+        config: _objectSpread({}, action.modalConfig),
+        stackPosition: thisStackPosition
+      } : _objectSpread({}, modal, {
+        config: _objectSpread({}, modal.config, {}, action.modalConfig)
+      }); // new state need to removed the existing modal (if present) before
+      // adding the udpated version
+
+      var newState = modal === undefined ? state : state.filter(function (modal) {
+        return modal.address !== newModal.address;
+      });
+      return [].concat(_toConsumableArray(newState), [newModal]);
+
+    case 'close_modal':
+      address = action.address;
+
+      if (address == null) {
+        throw new Error('close modal action dispatched without required address property.');
+      }
+
+      return state.filter(function (modal) {
+        return modal.address !== address;
+      });
+
+    case 'close_all_modals':
+      return [];
+
+    default:
+      return state;
+  }
+}
+
+/* harmony default export */ var reducers_modalReducer = (modalReducer);
+// EXTERNAL MODULE: external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"}
+var external_root_React_commonjs2_react_commonjs_react_amd_react_ = __webpack_require__(0);
+var external_root_React_commonjs2_react_commonjs_react_amd_react_default = /*#__PURE__*/__webpack_require__.n(external_root_React_commonjs2_react_commonjs_react_amd_react_);
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(1);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// CONCATENATED MODULE: ./src/components/DefaultModal.jsx
+var _jsxFileName = "/home/cblack/Work/xtract/modal-framework/src/components/DefaultModal.jsx";
+
+function DefaultModal_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { DefaultModal_typeof = function _typeof(obj) { return typeof obj; }; } else { DefaultModal_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return DefaultModal_typeof(obj); }
+
+function DefaultModal_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function DefaultModal_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { DefaultModal_ownKeys(Object(source), true).forEach(function (key) { DefaultModal_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { DefaultModal_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (DefaultModal_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function DefaultModal_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var DefaultModal_DefaultModal =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inherits(DefaultModal, _React$PureComponent);
+
+  function DefaultModal() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, DefaultModal);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(DefaultModal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    DefaultModal_defineProperty(_assertThisInitialized(_this), "closeHandler", function () {
+      return _this.props.closeSelf();
+    });
+
+    return _this;
+  }
+
+  _createClass(DefaultModal, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          _this$props$config = _this$props.config,
+          config = _this$props$config === void 0 ? {} : _this$props$config,
+          _this$props$style = _this$props.style,
+          style = _this$props$style === void 0 ? {} : _this$props$style,
+          _this$props$getModalR = _this$props.getModalRef,
+          getModalRef = _this$props$getModalR === void 0 ? function () {
+        return null;
+      } : _this$props$getModalR,
+          rest = _objectWithoutProperties(_this$props, ["config", "style", "getModalRef"]);
+
+      var _config$title = config.title,
+          title = _config$title === void 0 ? '' : _config$title,
+          _config$content = config.content,
+          content = _config$content === void 0 ? '' : _config$content,
+          _config$closable = config.closable,
+          closable = _config$closable === void 0 ? true : _config$closable;
+      var _content$type = content.type,
+          type = _content$type === void 0 ? {} : _content$type;
+      return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        id: "default-modal",
+        ref: getModalRef,
+        style: style,
+        className: "modal-container",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        className: "list-component list-group",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        className: "list-group-item active",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        className: "header",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        className: "corner-icons",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }), external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("h4", {
+        className: "list-group-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, title), external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        className: "corner-icons",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, !closable ? null : external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        className: "close-button",
+        onClick: this.closeHandler,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }, "\u2716")))), external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        className: "modal-content",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, // rather than simply placing content here, doing it this
+      // way allows the modal to accept jsx content and pass down
+      // the additional props available here (primarily closeSelf())
+      content && typeof type === 'function' // this indicates jsx)
+      ? external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.cloneElement(content, DefaultModal_objectSpread({}, rest)) : content)));
+    }
+  }]);
+
+  return DefaultModal;
+}(external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.PureComponent);
+
+/* harmony default export */ var components_DefaultModal = (DefaultModal_DefaultModal);
+// CONCATENATED MODULE: ./src/components/ModalFramework.jsx
+var ModalFramework_jsxFileName = "/home/cblack/Work/xtract/modal-framework/src/components/ModalFramework.jsx";
+
+function ModalFramework_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { ModalFramework_typeof = function _typeof(obj) { return typeof obj; }; } else { ModalFramework_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return ModalFramework_typeof(obj); }
+
+function ModalFramework_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function ModalFramework_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ModalFramework_ownKeys(Object(source), true).forEach(function (key) { ModalFramework_defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ModalFramework_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function ModalFramework_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function ModalFramework_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function ModalFramework_createClass(Constructor, protoProps, staticProps) { if (protoProps) ModalFramework_defineProperties(Constructor.prototype, protoProps); if (staticProps) ModalFramework_defineProperties(Constructor, staticProps); return Constructor; }
+
+function ModalFramework_possibleConstructorReturn(self, call) { if (call && (ModalFramework_typeof(call) === "object" || typeof call === "function")) { return call; } return ModalFramework_assertThisInitialized(self); }
+
+function ModalFramework_getPrototypeOf(o) { ModalFramework_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return ModalFramework_getPrototypeOf(o); }
+
+function ModalFramework_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function ModalFramework_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) ModalFramework_setPrototypeOf(subClass, superClass); }
+
+function ModalFramework_setPrototypeOf(o, p) { ModalFramework_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return ModalFramework_setPrototypeOf(o, p); }
+
+function ModalFramework_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+var ModalFramework_ModalFramework =
+/*#__PURE__*/
+function (_React$Component) {
+  ModalFramework_inherits(ModalFramework, _React$Component);
+
+  function ModalFramework() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    ModalFramework_classCallCheck(this, ModalFramework);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = ModalFramework_possibleConstructorReturn(this, (_getPrototypeOf2 = ModalFramework_getPrototypeOf(ModalFramework)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    ModalFramework_defineProperty(ModalFramework_assertThisInitialized(_this), "modalRenderer", function (modal, idx) {
+      // build tiling values
+      var tile = {};
+      var _this$props$tileConfi = _this.props.tileConfig,
+          tileConfig = _this$props$tileConfi === void 0 ? {} : _this$props$tileConfi;
+
+      if (tileConfig.horizontal) {
+        var pixWidth = tileConfig.horizontal.replace('px', '');
+        tile.left = modal.stackPosition * pixWidth + 'px';
+      }
+
+      if (tileConfig.vertical) {
+        var _pixWidth = tileConfig.vertical.replace('px', '');
+
+        tile.top = modal.stackPosition * _pixWidth + 'px';
+      } // render modals
+
+
+      if (external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.Children.count(_this.props.children) === 1) {
+        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.cloneElement(_this.props.children, {
+          key: modal.address,
+          style: ModalFramework_objectSpread({
+            zIndex: _this.props.startingZIndex + idx
+          }, tile),
+          modalAddress: modal.address,
+          config: modal.config,
+          closeSelf: function closeSelf() {
+            return _this.props.dispatch(closeModal(modal.address));
+          }
+        });
+      } else {
+        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_DefaultModal, {
+          key: modal.address,
+          style: ModalFramework_objectSpread({
+            zIndex: _this.props.startingZIndex + idx
+          }, tile),
+          config: modal.config,
+          modalAddress: modal.adddress,
+          closeSelf: function closeSelf() {
+            return _this.props.dispatch(closeModal(modal.address));
+          },
+          __source: {
+            fileName: ModalFramework_jsxFileName,
+            lineNumber: 30
+          },
+          __self: this
+        });
+      }
+    });
+
+    ModalFramework_defineProperty(ModalFramework_assertThisInitialized(_this), "handleMouseDownCapture", function (e) {
+      // don't cause what's underneath to lose focus
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    return _this;
+  }
+
+  ModalFramework_createClass(ModalFramework, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      if (this.props.coverEnabled && this.props.modals && this.props.modals.length >= 1) {
+        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          id: "modal-framework-default",
+          __source: {
+            fileName: ModalFramework_jsxFileName,
+            lineNumber: 52
+          },
+          __self: this
+        }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          className: "modal-screen-cover",
+          style: {
+            // length - 1 because length is 1 based not 0 based
+            zIndex: this.props.startingZIndex + this.props.modals.length - 1,
+            backgroundColor: "rgba(0,0,0,".concat(this.props.coverOpacity, ")")
+          },
+          onMouseDownCapture: this.handleMouseDownCapture,
+          __source: {
+            fileName: ModalFramework_jsxFileName,
+            lineNumber: 53
+          },
+          __self: this
+        }), this.props.modals.map(function (modal, idx) {
+          return _this2.modalRenderer(modal, idx);
+        }));
+      } else {
+        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          id: "modal-framework-default",
+          __source: {
+            fileName: ModalFramework_jsxFileName,
+            lineNumber: 69
+          },
+          __self: this
+        }, this.props.modals.map(function (modal, idx) {
+          return _this2.modalRenderer(modal, idx);
+        }));
+      }
+    }
+  }]);
+
+  return ModalFramework;
+}(external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.Component);
+
+/* harmony default export */ var components_ModalFramework = (ModalFramework_ModalFramework);
+ModalFramework_ModalFramework.propTypes = {
+  children: prop_types_default.a.object,
+  modals: prop_types_default.a.array.isRequired,
+  dispatch: prop_types_default.a.func.isRequired,
+  startingZIndex: prop_types_default.a.number,
+  coverOpacity: prop_types_default.a.number,
+  coverEnabled: prop_types_default.a.bool,
+  tileConfig: prop_types_default.a.object
+};
+ModalFramework_ModalFramework.defaultProps = {
+  startingZIndex: 1000000,
+  coverOpacity: 0.5,
+  coverEnabled: true
+};
+// CONCATENATED MODULE: ./src/utility/modalStore.js
+// kind of wasteful here but this is in fact the store and this is how we do
+// other packages so something to be said for consistency
+/* harmony default export */ var modalStore = ([]);
+// CONCATENATED MODULE: ./src/index.js
+/* concated harmony reexport modalActions */__webpack_require__.d(__webpack_exports__, "modalActions", function() { return modalActions; });
+/* concated harmony reexport modalReducer */__webpack_require__.d(__webpack_exports__, "modalReducer", function() { return reducers_modalReducer; });
+/* concated harmony reexport ModalFramework */__webpack_require__.d(__webpack_exports__, "ModalFramework", function() { return components_ModalFramework; });
+/* concated harmony reexport modalStore */__webpack_require__.d(__webpack_exports__, "modalStore", function() { return modalStore; });
+
+
+
+
+
+
+
+
+
+
+/***/ })
+/******/ ]);
+});
 //# sourceMappingURL=modal-framework.js.map
