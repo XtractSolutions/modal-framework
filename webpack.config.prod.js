@@ -8,7 +8,6 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     'modal-framework': path.join(__dirname, './src/index.js'),
-    'modal-framework.min': path.join(__dirname, './src/index.js')
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -32,11 +31,11 @@ module.exports = {
     }
   ],
   optimization: {
-    minimize: true
+    minimize: false,
   },
   module: {
     rules: [
-      // source maps
+      // source maps  
       {
         test: /\.js$/,
         use: ['source-map-loader'],
