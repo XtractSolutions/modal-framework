@@ -627,7 +627,14 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "modalActions", function() { return /* reexport */ modalActions; });
+__webpack_require__.d(__webpack_exports__, "modalReducer", function() { return /* reexport */ reducers_modalReducer; });
+__webpack_require__.d(__webpack_exports__, "ModalFramework", function() { return /* reexport */ components_ModalFramework; });
+__webpack_require__.d(__webpack_exports__, "modalStore", function() { return /* reexport */ modalStore; });
 
 // EXTERNAL MODULE: ./src/styles/indexStyles.styl
 var indexStyles = __webpack_require__(2);
@@ -658,7 +665,7 @@ function closeAllModals() {
   closeAllModals: closeAllModals
 });
 // CONCATENATED MODULE: ./src/utility/utility.js
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 // https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
 function makeId() {
@@ -703,13 +710,17 @@ function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
 // CONCATENATED MODULE: ./src/reducers/modalReducer.js
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -790,9 +801,9 @@ var prop_types = __webpack_require__(1);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // CONCATENATED MODULE: ./src/components/DefaultModal.jsx
-var _jsxFileName = "/home/cblack/Work/xtract/modal-framework/src/components/DefaultModal.jsx";
+var _jsxFileName = "/Users/andrewherren/xtract_sandbox/modal-framework/src/components/DefaultModal.jsx";
 
-function DefaultModal_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { DefaultModal_typeof = function _typeof(obj) { return typeof obj; }; } else { DefaultModal_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return DefaultModal_typeof(obj); }
+function DefaultModal_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { DefaultModal_typeof = function _typeof(obj) { return typeof obj; }; } else { DefaultModal_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return DefaultModal_typeof(obj); }
 
 function DefaultModal_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -808,11 +819,15 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
 function _possibleConstructorReturn(self, call) { if (call && (DefaultModal_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -822,14 +837,12 @@ function DefaultModal_defineProperty(obj, key, value) { if (key in obj) { Object
 
 
 
-var DefaultModal_DefaultModal =
-/*#__PURE__*/
-function (_React$PureComponent) {
+var DefaultModal_DefaultModal = /*#__PURE__*/function (_React$PureComponent) {
   _inherits(DefaultModal, _React$PureComponent);
 
-  function DefaultModal() {
-    var _getPrototypeOf2;
+  var _super = _createSuper(DefaultModal);
 
+  function DefaultModal() {
     var _this;
 
     _classCallCheck(this, DefaultModal);
@@ -838,7 +851,7 @@ function (_React$PureComponent) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(DefaultModal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _super.call.apply(_super, [this].concat(args));
 
     DefaultModal_defineProperty(_assertThisInitialized(_this), "closeHandler", function () {
       return _this.props.closeSelf();
@@ -869,73 +882,82 @@ function (_React$PureComponent) {
           closable = _config$closable === void 0 ? true : _config$closable;
       var _content$type = content.type,
           type = _content$type === void 0 ? {} : _content$type;
-      return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+      return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
         id: "default-modal",
         ref: getModalRef,
         style: style,
         className: "modal-container",
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
-        },
-        __self: this
-      }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          lineNumber: 17,
+          columnNumber: 7
+        }
+      }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
         className: "list-component list-group",
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          lineNumber: 23,
+          columnNumber: 9
+        }
+      }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
         className: "list-group-item active",
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          lineNumber: 24,
+          columnNumber: 11
+        }
+      }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
         className: "header",
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
-        },
-        __self: this
-      }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          lineNumber: 25,
+          columnNumber: 13
+        }
+      }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
         className: "corner-icons",
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
-        },
-        __self: this
-      }), external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("h4", {
+          lineNumber: 26,
+          columnNumber: 15
+        }
+      }), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("h4", {
         className: "list-group-title",
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
-        },
-        __self: this
-      }, title), external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          lineNumber: 27,
+          columnNumber: 15
+        }
+      }, title), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
         className: "corner-icons",
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }, !closable ? null : external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          lineNumber: 28,
+          columnNumber: 15
+        }
+      }, !closable ? null : /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
         className: "close-button",
         onClick: this.closeHandler,
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, "\u2716")))), external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+          lineNumber: 30,
+          columnNumber: 19
+        }
+      }, "\u2716")))), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
         className: "modal-content",
+        __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
+          lineNumber: 37,
+          columnNumber: 11
+        }
       }, // rather than simply placing content here, doing it this
       // way allows the modal to accept jsx content and pass down
       // the additional props available here (primarily closeSelf())
@@ -949,9 +971,9 @@ function (_React$PureComponent) {
 
 /* harmony default export */ var components_DefaultModal = (DefaultModal_DefaultModal);
 // CONCATENATED MODULE: ./src/components/ModalFramework.jsx
-var ModalFramework_jsxFileName = "/home/cblack/Work/xtract/modal-framework/src/components/ModalFramework.jsx";
+var ModalFramework_jsxFileName = "/Users/andrewherren/xtract_sandbox/modal-framework/src/components/ModalFramework.jsx";
 
-function ModalFramework_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { ModalFramework_typeof = function _typeof(obj) { return typeof obj; }; } else { ModalFramework_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return ModalFramework_typeof(obj); }
+function ModalFramework_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { ModalFramework_typeof = function _typeof(obj) { return typeof obj; }; } else { ModalFramework_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return ModalFramework_typeof(obj); }
 
 function ModalFramework_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -963,11 +985,15 @@ function ModalFramework_defineProperties(target, props) { for (var i = 0; i < pr
 
 function ModalFramework_createClass(Constructor, protoProps, staticProps) { if (protoProps) ModalFramework_defineProperties(Constructor.prototype, protoProps); if (staticProps) ModalFramework_defineProperties(Constructor, staticProps); return Constructor; }
 
+function ModalFramework_createSuper(Derived) { return function () { var Super = ModalFramework_getPrototypeOf(Derived), result; if (ModalFramework_isNativeReflectConstruct()) { var NewTarget = ModalFramework_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return ModalFramework_possibleConstructorReturn(this, result); }; }
+
 function ModalFramework_possibleConstructorReturn(self, call) { if (call && (ModalFramework_typeof(call) === "object" || typeof call === "function")) { return call; } return ModalFramework_assertThisInitialized(self); }
 
-function ModalFramework_getPrototypeOf(o) { ModalFramework_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return ModalFramework_getPrototypeOf(o); }
-
 function ModalFramework_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function ModalFramework_isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function ModalFramework_getPrototypeOf(o) { ModalFramework_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return ModalFramework_getPrototypeOf(o); }
 
 function ModalFramework_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) ModalFramework_setPrototypeOf(subClass, superClass); }
 
@@ -980,14 +1006,12 @@ function ModalFramework_defineProperty(obj, key, value) { if (key in obj) { Obje
 
 
 
-var ModalFramework_ModalFramework =
-/*#__PURE__*/
-function (_React$Component) {
+var ModalFramework_ModalFramework = /*#__PURE__*/function (_React$Component) {
   ModalFramework_inherits(ModalFramework, _React$Component);
 
-  function ModalFramework() {
-    var _getPrototypeOf2;
+  var _super = ModalFramework_createSuper(ModalFramework);
 
+  function ModalFramework() {
     var _this;
 
     ModalFramework_classCallCheck(this, ModalFramework);
@@ -996,7 +1020,7 @@ function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    _this = ModalFramework_possibleConstructorReturn(this, (_getPrototypeOf2 = ModalFramework_getPrototypeOf(ModalFramework)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _super.call.apply(_super, [this].concat(args));
 
     ModalFramework_defineProperty(ModalFramework_assertThisInitialized(_this), "modalRenderer", function (modal, idx) {
       // build tiling values
@@ -1029,7 +1053,7 @@ function (_React$Component) {
           }
         });
       } else {
-        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_DefaultModal, {
+        return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(components_DefaultModal, {
           key: modal.address,
           style: ModalFramework_objectSpread({
             zIndex: _this.props.startingZIndex + idx
@@ -1039,11 +1063,12 @@ function (_React$Component) {
           closeSelf: function closeSelf() {
             return _this.props.dispatch(closeModal(modal.address));
           },
+          __self: ModalFramework_assertThisInitialized(_this),
           __source: {
             fileName: ModalFramework_jsxFileName,
-            lineNumber: 30
-          },
-          __self: this
+            lineNumber: 30,
+            columnNumber: 9
+          }
         });
       }
     });
@@ -1063,14 +1088,15 @@ function (_React$Component) {
       var _this2 = this;
 
       if (this.props.coverEnabled && this.props.modals && this.props.modals.length >= 1) {
-        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
           id: "modal-framework-default",
+          __self: this,
           __source: {
             fileName: ModalFramework_jsxFileName,
-            lineNumber: 52
-          },
-          __self: this
-        }, external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+            lineNumber: 52,
+            columnNumber: 9
+          }
+        }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
           className: "modal-screen-cover",
           style: {
             // length - 1 because length is 1 based not 0 based
@@ -1078,22 +1104,24 @@ function (_React$Component) {
             backgroundColor: "rgba(0,0,0,".concat(this.props.coverOpacity, ")")
           },
           onMouseDownCapture: this.handleMouseDownCapture,
+          __self: this,
           __source: {
             fileName: ModalFramework_jsxFileName,
-            lineNumber: 53
-          },
-          __self: this
+            lineNumber: 53,
+            columnNumber: 11
+          }
         }), this.props.modals.map(function (modal, idx) {
           return _this2.modalRenderer(modal, idx);
         }));
       } else {
-        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+        return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
           id: "modal-framework-default",
+          __self: this,
           __source: {
             fileName: ModalFramework_jsxFileName,
-            lineNumber: 69
-          },
-          __self: this
+            lineNumber: 69,
+            columnNumber: 9
+          }
         }, this.props.modals.map(function (modal, idx) {
           return _this2.modalRenderer(modal, idx);
         }));
@@ -1124,10 +1152,6 @@ ModalFramework_ModalFramework.defaultProps = {
 // other packages so something to be said for consistency
 /* harmony default export */ var modalStore = ([]);
 // CONCATENATED MODULE: ./src/index.js
-/* concated harmony reexport modalActions */__webpack_require__.d(__webpack_exports__, "modalActions", function() { return modalActions; });
-/* concated harmony reexport modalReducer */__webpack_require__.d(__webpack_exports__, "modalReducer", function() { return reducers_modalReducer; });
-/* concated harmony reexport ModalFramework */__webpack_require__.d(__webpack_exports__, "ModalFramework", function() { return components_ModalFramework; });
-/* concated harmony reexport modalStore */__webpack_require__.d(__webpack_exports__, "modalStore", function() { return modalStore; });
 
 
 
