@@ -1,7 +1,7 @@
 {
   "modal-framework.js": {
     "src": "modal-framework.js",
-    "integrity": "sha256-lajw/gpG3yDKD1phJGiMfBBQZCUH41/gkAT82fg0vcE= sha384-tf7hXd0DRP3eTvmuTEggVlPZD2kRxg5eDhXrZB3JsqjOyEen3i8IvLlI6g0Sd/0w sha512-Ip/tL0yxKNCLIFRTF9hWBiAcJiLnMBqCSPiRIkEtcPqyVCiq/5+96PnWpjfRNKVLmjCK3QNjCgmRgvaptPdlXA=="
+    "integrity": "sha256-iU9+wSn/CbOvFQXFEjqeStzG7vzkAptPW9R/k2hpl+4= sha384-JZEAQNbNiNk3WSdLg4HPiELnwFjbq+rc/Oq0piuROF+XX8WFyaoWjL6focu1euGK sha512-+AMzu7z/3NWLm2p2pnKazNEziLGytCoL5I+V3cUCG9AWV6O6w29hOCQXENojuDL9vYm/pcP1eqn3HZd9vT0dqQ=="
   },
   "modal-framework.js.map": {
     "src": "modal-framework.js.map",
