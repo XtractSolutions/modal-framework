@@ -1,6 +1,6 @@
 {
   "name": "modal-framework",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A framework for allowing simple reusable modal windows",
   "main": "dist/modal-framework.js",
   "scripts": {
