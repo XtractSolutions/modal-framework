@@ -821,7 +821,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (DefaultModal_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
@@ -960,7 +960,9 @@ var DefaultModal_DefaultModal = /*#__PURE__*/function (_React$PureComponent) {
       // way allows the modal to accept jsx content and pass down
       // the additional props available here (primarily closeSelf())
       content && typeof type === 'function' // this indicates jsx)
-      ? external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.cloneElement(content, DefaultModal_objectSpread({}, rest)) : content)));
+      ?
+      /*#__PURE__*/
+      external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.cloneElement(content, DefaultModal_objectSpread({}, rest)) : content)));
     }
   }]);
 
@@ -987,7 +989,7 @@ function ModalFramework_inherits(subClass, superClass) { if (typeof superClass !
 
 function ModalFramework_setPrototypeOf(o, p) { ModalFramework_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return ModalFramework_setPrototypeOf(o, p); }
 
-function ModalFramework_createSuper(Derived) { var hasNativeReflectConstruct = ModalFramework_isNativeReflectConstruct(); return function () { var Super = ModalFramework_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = ModalFramework_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return ModalFramework_possibleConstructorReturn(this, result); }; }
+function ModalFramework_createSuper(Derived) { var hasNativeReflectConstruct = ModalFramework_isNativeReflectConstruct(); return function _createSuperInternal() { var Super = ModalFramework_getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = ModalFramework_getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return ModalFramework_possibleConstructorReturn(this, result); }; }
 
 function ModalFramework_possibleConstructorReturn(self, call) { if (call && (ModalFramework_typeof(call) === "object" || typeof call === "function")) { return call; } return ModalFramework_assertThisInitialized(self); }
 
@@ -1039,7 +1041,7 @@ var ModalFramework_ModalFramework = /*#__PURE__*/function (_React$Component) {
 
 
       if (external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.Children.count(_this.props.children) === 1) {
-        return external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.cloneElement(_this.props.children, {
+        return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.cloneElement(_this.props.children, {
           key: modal.address,
           style: ModalFramework_objectSpread({
             zIndex: _this.props.startingZIndex + idx
