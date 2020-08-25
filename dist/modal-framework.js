@@ -122,8 +122,108 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var api = __webpack_require__(3);
-            var content = __webpack_require__(4);
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(4);
+            var content = __webpack_require__(5);
 
             content = content.__esModule ? content.default : content;
 
@@ -143,7 +243,7 @@ var update = api(content, options);
 module.exports = content.locals || {};
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -418,117 +518,21 @@ module.exports = function (list, options) {
 };
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, "#modal-framework-default #default-modal .close-button {\n  cursor: pointer;\n}\n#modal-framework-default #default-modal .header {\n  background-color: #ffd700;\n  height: 5vh;\n  display: flex;\n  align-items: center;\n  font-size: 1.2em;\n  border-radius: 5px 5px 0px 0px;\n  display: flex;\n  justify-content: space-between;\n}\n#modal-framework-default #default-modal .header .corner-icons {\n  align-self: flex-start;\n  padding: 5px;\n}\n#modal-framework-default #default-modal .modal-content {\n  display: flex;\n  padding: 20px;\n  border-radius: 0px;\n  min-height: 150px;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: stretch;\n  font-size: 1.25em;\n  overflow: visible;\n  box-shadow: none !important;\n  white-space: pre-wrap;\n}\n#modal-framework-default #default-modal .list-group {\n  margin-bottom: 0px;\n}\n#modal-framework-default #default-modal .list-group-item {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n#modal-framework-default #default-modal .corner-icons {\n  display: flex;\n  align-items: center;\n}\n#modal-framework-default #default-modal .btn-group {\n  padding-top: 10px;\n  display: flex;\n  justify-content: center;\n  padding: 10px;\n}\n#modal-framework-default .modal-screen-cover {\n  visibility: visible;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: all 0.25s;\n}\n#modal-framework-default .modal-container {\n  overflow: visible;\n  width: 60%;\n  margin: 100px auto;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  transition: 0.5s ease-in-out;\n  border-radius: 5px;\n  padding: 0px;\n  background: #fff;\n  border: 2px solid #000;\n  left: 0%;\n  right: 0%;\n  position: absolute;\n  top: 0px;\n}\n", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
 
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "#modal-framework-default #default-modal .close-button {\n  cursor: pointer;\n}\n#modal-framework-default #default-modal .header {\n  background-color: #ffd700;\n  height: 5vh;\n  display: flex;\n  align-items: center;\n  font-size: 1.2em;\n  border-radius: 5px 5px 0px 0px;\n  display: flex;\n  justify-content: space-between;\n}\n#modal-framework-default #default-modal .header .corner-icons {\n  align-self: flex-start;\n  padding: 5px;\n}\n#modal-framework-default #default-modal .modal-content {\n  display: flex;\n  padding: 20px;\n  border-radius: 0px;\n  min-height: 150px;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: stretch;\n  font-size: 1.25em;\n  overflow: visible;\n  box-shadow: none !important;\n  white-space: pre-wrap;\n}\n#modal-framework-default #default-modal .list-group {\n  margin-bottom: 0px;\n}\n#modal-framework-default #default-modal .list-group-item {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n#modal-framework-default #default-modal .corner-icons {\n  display: flex;\n  align-items: center;\n}\n#modal-framework-default #default-modal .btn-group {\n  padding-top: 10px;\n  display: flex;\n  justify-content: center;\n  padding: 10px;\n}\n#modal-framework-default .modal-screen-cover {\n  visibility: visible;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: all 0.25s;\n}\n#modal-framework-default .modal-container {\n  overflow: visible;\n  width: 60%;\n  margin: 100px auto;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  transition: 0.5s ease-in-out;\n  border-radius: 5px;\n  padding: 0px;\n  background: #fff;\n  border: 2px solid #000;\n  left: 0%;\n  right: 0%;\n  position: absolute;\n  top: 0px;\n}\n", "",{"version":3,"sources":["src/styles/modalStyles.styl","indexStyles.styl","src/styles/indexStyles.styl"],"names":[],"mappings":"AAAA;EACI,eAAO;ACCX;ADCA;EACE,yBAAiB;EACjB,WAAO;EACP,aAAQ;EACR,mBAAY;EACZ,gBAAU;EACV,8BAAc;EACd,aAAQ;EACR,8BAAgB;ACClB;ADCA;EACE,sBAAW;EACX,YAAQ;ACCV;ADCA;EACI,aAAQ;EACR,aAAQ;EACR,kBAAc;EACd,iBAAW;EACX,sBAAe;EACf,oBAAY;EACZ,wBAAgB;EAChB,iBAAU;EACV,iBAAS;EACT,2BAAW;EACX,qBAAY;ACChB;ADCA;EACI,kBAAc;ACClB;ADCA;EACI,gBAAY;EACZ,mBAAe;ACCnB;ADCA;EACI,aAAQ;EACR,mBAAY;ACChB;ADCA;EACI,iBAAY;EACZ,aAAQ;EACR,uBAAgB;EAChB,aAAQ;ACCZ;AC5CA;EACI,mBAAW;EACX,kBAAS;EACT,SAAK;EACL,QAAI;EACJ,WAAM;EACN,YAAO;EACP,kBAAW;EACX,qBAAW;AD8Cf;AC5CA;EACI,iBAAS;EACT,UAAM;EACN,kBAAO;EACP,kBAAW;EACX,aAAQ;EACR,sBAAe;EACf,4BAAW;EACX,kBAAc;EACd,YAAQ;EACR,gBAAW;EACX,sBAAO;EACP,QAAK;EACL,SAAM;EACN,kBAAS;EACT,QAAI;AD8CR","file":"indexStyles.styl","sourcesContent":["#modal-framework-default #default-modal .close-button\n    cursor pointer\n    \n#modal-framework-default #default-modal .header\n  background-color gold\n  height 5vh\n  display flex\n  align-items center\n  font-size 1.2em\n  border-radius 5px 5px 0px 0px\n  display flex\n  justify-content space-between\n  \n#modal-framework-default #default-modal .header .corner-icons\n  align-self flex-start\n  padding 5px\n\n#modal-framework-default #default-modal .modal-content\n    display flex\n    padding 20px\n    border-radius 0px\n    min-height 150px\n    flex-direction column\n    align-items stretch\n    justify-content stretch\n    font-size 1.25em\n    overflow visible\n    box-shadow none !important\n    white-space pre-wrap\n\n#modal-framework-default #default-modal .list-group\n    margin-bottom 0px\n\n#modal-framework-default #default-modal .list-group-item\n    padding-top 0px\n    padding-bottom 0px\n\n#modal-framework-default #default-modal .corner-icons\n    display flex\n    align-items center\n\n#modal-framework-default #default-modal .btn-group\n    padding-top 10px\n    display flex\n    justify-content center\n    padding 10px\n\n","#modal-framework-default #default-modal .close-button {\n  cursor: pointer;\n}\n#modal-framework-default #default-modal .header {\n  background-color: #ffd700;\n  height: 5vh;\n  display: flex;\n  align-items: center;\n  font-size: 1.2em;\n  border-radius: 5px 5px 0px 0px;\n  display: flex;\n  justify-content: space-between;\n}\n#modal-framework-default #default-modal .header .corner-icons {\n  align-self: flex-start;\n  padding: 5px;\n}\n#modal-framework-default #default-modal .modal-content {\n  display: flex;\n  padding: 20px;\n  border-radius: 0px;\n  min-height: 150px;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: stretch;\n  font-size: 1.25em;\n  overflow: visible;\n  box-shadow: none !important;\n  white-space: pre-wrap;\n}\n#modal-framework-default #default-modal .list-group {\n  margin-bottom: 0px;\n}\n#modal-framework-default #default-modal .list-group-item {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n#modal-framework-default #default-modal .corner-icons {\n  display: flex;\n  align-items: center;\n}\n#modal-framework-default #default-modal .btn-group {\n  padding-top: 10px;\n  display: flex;\n  justify-content: center;\n  padding: 10px;\n}\n#modal-framework-default .modal-screen-cover {\n  visibility: visible;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: all 0.25s;\n}\n#modal-framework-default .modal-container {\n  overflow: visible;\n  width: 60%;\n  margin: 100px auto;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  transition: 0.5s ease-in-out;\n  border-radius: 5px;\n  padding: 0px;\n  background: #fff;\n  border: 2px solid #000;\n  left: 0%;\n  right: 0%;\n  position: absolute;\n  top: 0px;\n}\n","@import './modalStyles.styl'\n    \n#modal-framework-default .modal-screen-cover\n    visibility visible\n    position absolute\n    left 0px\n    top 0px\n    width 100%\n    height 100%\n    text-align center\n    transition all .25s\n\n#modal-framework-default .modal-container\n    overflow visible\n    width 60%\n    margin 100px auto\n    text-align center\n    display flex\n    flex-direction column\n    transition .5s ease-in-out\n    border-radius 5px\n    padding 0px\n    background white\n    border 2px solid black\n    left 0%\n    right 0%\n    position absolute\n    top 0px"]}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (useSourceMap) {
-  var list = []; // return the list of modules as css string
-
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item, useSourceMap);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join('');
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === 'string') {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, '']];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
-
-  var cssMapping = item[3];
-
-  if (!cssMapping) {
-    return content;
-  }
-
-  if (useSourceMap && typeof btoa === 'function') {
-    var sourceMapping = toComment(cssMapping);
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-  }
-
-  return [content].join('\n');
-} // Adapted from convert-source-map (MIT)
-
-
-function toComment(sourceMap) {
-  // eslint-disable-next-line no-undef
-  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
-  return "/*# ".concat(data, " */");
-}
 
 /***/ }),
 /* 6 */
@@ -635,7 +639,7 @@ __webpack_require__.d(__webpack_exports__, "ModalFramework", function() { return
 __webpack_require__.d(__webpack_exports__, "modalStore", function() { return /* reexport */ modalStore; });
 
 // EXTERNAL MODULE: ./src/styles/indexStyles.styl
-var indexStyles = __webpack_require__(2);
+var indexStyles = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./src/actions/modalActions.js
 function openModal(address, modalConfig) {
