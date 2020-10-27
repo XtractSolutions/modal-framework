@@ -6,6 +6,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=production nyc --reporter=text ./node_modules/.bin/mocha --recursive --require ./test/setup.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "ci-test": "cross-env NODE_ENV=production nyc --reporter=lcov mocha --recursive --require ./test/setup.js",
     "start:demo": "cross-env NODE_ENV=development node demo/devServer.js"
   },
   "repository": {
