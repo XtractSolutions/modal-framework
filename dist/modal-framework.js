@@ -120,130 +120,25 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
 
 
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-// eslint-disable-next-line func-names
-module.exports = function (useSourceMap) {
-  var list = []; // return the list of modules as css string
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "#modal-framework-default #default-modal .close-button{cursor:pointer}#modal-framework-default #default-modal .header{background-color:#ffd700;height:5vh;display:flex;align-items:center;font-size:1.2em;border-radius:5px 5px 0 0;display:flex;justify-content:space-between}#modal-framework-default #default-modal .header .corner-icons{align-self:flex-start;padding:5px}#modal-framework-default #default-modal .modal-content{display:flex;padding:20px;border-radius:0;min-height:150px;flex-direction:column;align-items:stretch;justify-content:stretch;font-size:1.25em;overflow:visible;box-shadow:none !important;white-space:pre-wrap}#modal-framework-default #default-modal .list-group{margin-bottom:0}#modal-framework-default #default-modal .list-group-item{padding-top:0;padding-bottom:0}#modal-framework-default #default-modal .corner-icons{display:flex;align-items:center}#modal-framework-default #default-modal .btn-group{padding-top:10px;display:flex;justify-content:center;padding:10px}#modal-framework-default .modal-screen-cover{visibility:visible;position:absolute;left:0;top:0;width:100%;height:100%;text-align:center;transition:all .25s}#modal-framework-default .modal-container{overflow:visible;width:60%;margin:100px auto;text-align:center;display:flex;flex-direction:column;transition:.5s ease-in-out;border-radius:5px;padding:0;background:#fff;border:2px solid #000;left:0%;right:0%;position:absolute;top:0}", "",{"version":3,"sources":["webpack://./src/styles/modalStyles.styl","webpack://./src/styles/indexStyles.styl"],"names":[],"mappings":"AAAA,sDACI,cAAO,CAEX,gDACE,wBAAiB,CACjB,UAAO,CACP,YAAQ,CACR,kBAAY,CACZ,eAAU,CACV,yBAAc,CACd,YAAQ,CACR,6BAAgB,CAElB,8DACE,qBAAW,CACX,WAAQ,CAEV,uDACI,YAAQ,CACR,YAAQ,CACR,eAAc,CACd,gBAAW,CACX,qBAAe,CACf,mBAAY,CACZ,uBAAgB,CAChB,gBAAU,CACV,gBAAS,CACT,0BAAW,CACX,oBAAY,CAEhB,oDACI,eAAc,CAElB,yDACI,aAAY,CACZ,gBAAe,CAEnB,sDACI,YAAQ,CACR,kBAAY,CAEhB,mDACI,gBAAY,CACZ,YAAQ,CACR,sBAAgB,CAChB,YAAQ,CC3CZ,6CACI,kBAAW,CACX,iBAAS,CACT,MAAK,CACL,KAAI,CACJ,UAAM,CACN,WAAO,CACP,iBAAW,CACX,mBAAW,CAEf,0CACI,gBAAS,CACT,SAAM,CACN,iBAAO,CACP,iBAAW,CACX,YAAQ,CACR,qBAAe,CACf,0BAAW,CACX,iBAAc,CACd,SAAQ,CACR,eAAW,CACX,qBAAO,CACP,OAAK,CACL,QAAM,CACN,iBAAS,CACT,KAAI","sourcesContent":["#modal-framework-default #default-modal .close-button\n    cursor pointer\n    \n#modal-framework-default #default-modal .header\n  background-color gold\n  height 5vh\n  display flex\n  align-items center\n  font-size 1.2em\n  border-radius 5px 5px 0px 0px\n  display flex\n  justify-content space-between\n  \n#modal-framework-default #default-modal .header .corner-icons\n  align-self flex-start\n  padding 5px\n\n#modal-framework-default #default-modal .modal-content\n    display flex\n    padding 20px\n    border-radius 0px\n    min-height 150px\n    flex-direction column\n    align-items stretch\n    justify-content stretch\n    font-size 1.25em\n    overflow visible\n    box-shadow none !important\n    white-space pre-wrap\n\n#modal-framework-default #default-modal .list-group\n    margin-bottom 0px\n\n#modal-framework-default #default-modal .list-group-item\n    padding-top 0px\n    padding-bottom 0px\n\n#modal-framework-default #default-modal .corner-icons\n    display flex\n    align-items center\n\n#modal-framework-default #default-modal .btn-group\n    padding-top 10px\n    display flex\n    justify-content center\n    padding 10px\n\n","@import './modalStyles.styl'\n    \n#modal-framework-default .modal-screen-cover\n    visibility visible\n    position absolute\n    left 0px\n    top 0px\n    width 100%\n    height 100%\n    text-align center\n    transition all .25s\n\n#modal-framework-default .modal-container\n    overflow visible\n    width 60%\n    margin 100px auto\n    text-align center\n    display flex\n    flex-direction column\n    transition .5s ease-in-out\n    border-radius 5px\n    padding 0px\n    background white\n    border 2px solid black\n    left 0%\n    right 0%\n    position absolute\n    top 0px"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item, useSourceMap);
-
-      if (item[2]) {
-        return "@media ".concat(item[2], " {").concat(content, "}");
-      }
-
-      return content;
-    }).join('');
-  }; // import a list of modules into the list
-  // eslint-disable-next-line func-names
-
-
-  list.i = function (modules, mediaQuery, dedupe) {
-    if (typeof modules === 'string') {
-      // eslint-disable-next-line no-param-reassign
-      modules = [[null, modules, '']];
-    }
-
-    var alreadyImportedModules = {};
-
-    if (dedupe) {
-      for (var i = 0; i < this.length; i++) {
-        // eslint-disable-next-line prefer-destructuring
-        var id = this[i][0];
-
-        if (id != null) {
-          alreadyImportedModules[id] = true;
-        }
-      }
-    }
-
-    for (var _i = 0; _i < modules.length; _i++) {
-      var item = [].concat(modules[_i]);
-
-      if (dedupe && alreadyImportedModules[item[0]]) {
-        // eslint-disable-next-line no-continue
-        continue;
-      }
-
-      if (mediaQuery) {
-        if (!item[2]) {
-          item[2] = mediaQuery;
-        } else {
-          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
-        }
-      }
-
-      list.push(item);
-    }
-  };
-
-  return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
-
-  var cssMapping = item[3];
-
-  if (!cssMapping) {
-    return content;
-  }
-
-  if (useSourceMap && typeof btoa === 'function') {
-    var sourceMapping = toComment(cssMapping);
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-  }
-
-  return [content].join('\n');
-} // Adapted from convert-source-map (MIT)
-
-
-function toComment(sourceMap) {
-  // eslint-disable-next-line no-undef
-  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
-  return "/*# ".concat(data, " */");
-}
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var api = __webpack_require__(4);
-            var content = __webpack_require__(5);
-
-            content = content.__esModule ? content.default : content;
-
-            if (typeof content === 'string') {
-              content = [[module.i, content, '']];
-            }
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = api(content, options);
-
-
-
-module.exports = content.locals || {};
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -422,7 +317,7 @@ function applyToTag(style, options, obj) {
     style.removeAttribute('media');
   }
 
-  if (sourceMap && btoa) {
+  if (sourceMap && typeof btoa !== 'undefined') {
     css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
   } // For old IE
 
@@ -518,21 +413,114 @@ module.exports = function (list, options) {
 };
 
 /***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
 
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, "#modal-framework-default #default-modal .close-button {\n  cursor: pointer;\n}\n#modal-framework-default #default-modal .header {\n  background-color: #ffd700;\n  height: 5vh;\n  display: flex;\n  align-items: center;\n  font-size: 1.2em;\n  border-radius: 5px 5px 0px 0px;\n  display: flex;\n  justify-content: space-between;\n}\n#modal-framework-default #default-modal .header .corner-icons {\n  align-self: flex-start;\n  padding: 5px;\n}\n#modal-framework-default #default-modal .modal-content {\n  display: flex;\n  padding: 20px;\n  border-radius: 0px;\n  min-height: 150px;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: stretch;\n  font-size: 1.25em;\n  overflow: visible;\n  box-shadow: none !important;\n  white-space: pre-wrap;\n}\n#modal-framework-default #default-modal .list-group {\n  margin-bottom: 0px;\n}\n#modal-framework-default #default-modal .list-group-item {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n#modal-framework-default #default-modal .corner-icons {\n  display: flex;\n  align-items: center;\n}\n#modal-framework-default #default-modal .btn-group {\n  padding-top: 10px;\n  display: flex;\n  justify-content: center;\n  padding: 10px;\n}\n#modal-framework-default .modal-screen-cover {\n  visibility: visible;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: all 0.25s;\n}\n#modal-framework-default .modal-container {\n  overflow: visible;\n  width: 60%;\n  margin: 100px auto;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  transition: 0.5s ease-in-out;\n  border-radius: 5px;\n  padding: 0px;\n  background: #fff;\n  border: 2px solid #000;\n  left: 0%;\n  right: 0%;\n  position: absolute;\n  top: 0px;\n}\n", "",{"version":3,"sources":["src/styles/modalStyles.styl","indexStyles.styl","src/styles/indexStyles.styl"],"names":[],"mappings":"AAAA;EACI,eAAO;ACCX;ADCA;EACE,yBAAiB;EACjB,WAAO;EACP,aAAQ;EACR,mBAAY;EACZ,gBAAU;EACV,8BAAc;EACd,aAAQ;EACR,8BAAgB;ACClB;ADCA;EACE,sBAAW;EACX,YAAQ;ACCV;ADCA;EACI,aAAQ;EACR,aAAQ;EACR,kBAAc;EACd,iBAAW;EACX,sBAAe;EACf,oBAAY;EACZ,wBAAgB;EAChB,iBAAU;EACV,iBAAS;EACT,2BAAW;EACX,qBAAY;ACChB;ADCA;EACI,kBAAc;ACClB;ADCA;EACI,gBAAY;EACZ,mBAAe;ACCnB;ADCA;EACI,aAAQ;EACR,mBAAY;ACChB;ADCA;EACI,iBAAY;EACZ,aAAQ;EACR,uBAAgB;EAChB,aAAQ;ACCZ;AC5CA;EACI,mBAAW;EACX,kBAAS;EACT,SAAK;EACL,QAAI;EACJ,WAAM;EACN,YAAO;EACP,kBAAW;EACX,qBAAW;AD8Cf;AC5CA;EACI,iBAAS;EACT,UAAM;EACN,kBAAO;EACP,kBAAW;EACX,aAAQ;EACR,sBAAe;EACf,4BAAW;EACX,kBAAc;EACd,YAAQ;EACR,gBAAW;EACX,sBAAO;EACP,QAAK;EACL,SAAM;EACN,kBAAS;EACT,QAAI;AD8CR","file":"indexStyles.styl","sourcesContent":["#modal-framework-default #default-modal .close-button\n    cursor pointer\n    \n#modal-framework-default #default-modal .header\n  background-color gold\n  height 5vh\n  display flex\n  align-items center\n  font-size 1.2em\n  border-radius 5px 5px 0px 0px\n  display flex\n  justify-content space-between\n  \n#modal-framework-default #default-modal .header .corner-icons\n  align-self flex-start\n  padding 5px\n\n#modal-framework-default #default-modal .modal-content\n    display flex\n    padding 20px\n    border-radius 0px\n    min-height 150px\n    flex-direction column\n    align-items stretch\n    justify-content stretch\n    font-size 1.25em\n    overflow visible\n    box-shadow none !important\n    white-space pre-wrap\n\n#modal-framework-default #default-modal .list-group\n    margin-bottom 0px\n\n#modal-framework-default #default-modal .list-group-item\n    padding-top 0px\n    padding-bottom 0px\n\n#modal-framework-default #default-modal .corner-icons\n    display flex\n    align-items center\n\n#modal-framework-default #default-modal .btn-group\n    padding-top 10px\n    display flex\n    justify-content center\n    padding 10px\n\n","#modal-framework-default #default-modal .close-button {\n  cursor: pointer;\n}\n#modal-framework-default #default-modal .header {\n  background-color: #ffd700;\n  height: 5vh;\n  display: flex;\n  align-items: center;\n  font-size: 1.2em;\n  border-radius: 5px 5px 0px 0px;\n  display: flex;\n  justify-content: space-between;\n}\n#modal-framework-default #default-modal .header .corner-icons {\n  align-self: flex-start;\n  padding: 5px;\n}\n#modal-framework-default #default-modal .modal-content {\n  display: flex;\n  padding: 20px;\n  border-radius: 0px;\n  min-height: 150px;\n  flex-direction: column;\n  align-items: stretch;\n  justify-content: stretch;\n  font-size: 1.25em;\n  overflow: visible;\n  box-shadow: none !important;\n  white-space: pre-wrap;\n}\n#modal-framework-default #default-modal .list-group {\n  margin-bottom: 0px;\n}\n#modal-framework-default #default-modal .list-group-item {\n  padding-top: 0px;\n  padding-bottom: 0px;\n}\n#modal-framework-default #default-modal .corner-icons {\n  display: flex;\n  align-items: center;\n}\n#modal-framework-default #default-modal .btn-group {\n  padding-top: 10px;\n  display: flex;\n  justify-content: center;\n  padding: 10px;\n}\n#modal-framework-default .modal-screen-cover {\n  visibility: visible;\n  position: absolute;\n  left: 0px;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  text-align: center;\n  transition: all 0.25s;\n}\n#modal-framework-default .modal-container {\n  overflow: visible;\n  width: 60%;\n  margin: 100px auto;\n  text-align: center;\n  display: flex;\n  flex-direction: column;\n  transition: 0.5s ease-in-out;\n  border-radius: 5px;\n  padding: 0px;\n  background: #fff;\n  border: 2px solid #000;\n  left: 0%;\n  right: 0%;\n  position: absolute;\n  top: 0px;\n}\n","@import './modalStyles.styl'\n    \n#modal-framework-default .modal-screen-cover\n    visibility visible\n    position absolute\n    left 0px\n    top 0px\n    width 100%\n    height 100%\n    text-align center\n    transition all .25s\n\n#modal-framework-default .modal-container\n    overflow visible\n    width 60%\n    margin 100px auto\n    text-align center\n    display flex\n    flex-direction column\n    transition .5s ease-in-out\n    border-radius 5px\n    padding 0px\n    background white\n    border 2px solid black\n    left 0%\n    right 0%\n    position absolute\n    top 0px"]}]);
-// Exports
-/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+module.exports = function cssWithMappingToString(item) {
+  var _item = _slicedToArray(item, 4),
+      content = _item[1],
+      cssMapping = _item[3];
+
+  if (typeof btoa === 'function') {
+    // eslint-disable-next-line no-undef
+    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
+    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+    var sourceMapping = "/*# ".concat(data, " */");
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (cssWithMappingToString) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
 
 /***/ }),
 /* 6 */
@@ -638,9 +626,27 @@ __webpack_require__.d(__webpack_exports__, "modalReducer", function() { return /
 __webpack_require__.d(__webpack_exports__, "ModalFramework", function() { return /* reexport */ components_ModalFramework; });
 __webpack_require__.d(__webpack_exports__, "modalStore", function() { return /* reexport */ modalStore; });
 
-// EXTERNAL MODULE: ./src/styles/indexStyles.styl
-var indexStyles = __webpack_require__(3);
+// EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
+var injectStylesIntoStyleTag = __webpack_require__(3);
+var injectStylesIntoStyleTag_default = /*#__PURE__*/__webpack_require__.n(injectStylesIntoStyleTag);
 
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/stylus-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ref--6-3!./src/styles/indexStyles.styl
+var indexStyles = __webpack_require__(2);
+
+// CONCATENATED MODULE: ./src/styles/indexStyles.styl
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = injectStylesIntoStyleTag_default()(indexStyles["a" /* default */], options);
+
+
+
+/* harmony default export */ var styles_indexStyles = (indexStyles["a" /* default */].locals || {});
 // CONCATENATED MODULE: ./src/actions/modalActions.js
 function openModal(address, modalConfig) {
   return {
