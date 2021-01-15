@@ -6,11 +6,11 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    app: path.join(__dirname, './demo/index.jsx')
+    app: path.join(__dirname, './demo/index.jsx'),
   },
   output: {
     path: path.join(__dirname, './demo/dist'),
-    publicPath: '/dist/'
+    publicPath: '/dist/',
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
@@ -19,7 +19,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        include: [path.join(__dirname, 'demo'), path.join(__dirname, 'src')]
+        include: [path.join(__dirname, 'demo'), path.join(__dirname, 'src')],
       },
       // CSS
       {
@@ -32,12 +32,14 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => {
-                return [autoprefixer]
-              }
-            }
-          }
-        ]
+              postcssOptions: {
+                plugins: () => {
+                  return [autoprefixer]
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.less$/,
@@ -49,12 +51,14 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => {
-                return [autoprefixer]
-              }
-            }
-          }
-        ]
+              postcssOptions: {
+                plugins: () => {
+                  return [autoprefixer]
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -64,13 +68,15 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => {
-                return [autoprefixer]
-              }
-            }
-          }
-        ]
-      }
-    ]
-  }
+              postcssOptions: {
+                plugins: () => {
+                  return [autoprefixer]
+                },
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
 }

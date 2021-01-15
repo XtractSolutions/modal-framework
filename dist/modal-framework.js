@@ -803,9 +803,9 @@ var prop_types = __webpack_require__(1);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // CONCATENATED MODULE: ./src/components/DefaultModal.jsx
-var _jsxFileName = "/Users/andrewherren/xtract_sandbox/modal-framework/src/components/DefaultModal.jsx";
-
 function DefaultModal_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { DefaultModal_typeof = function _typeof(obj) { return typeof obj; }; } else { DefaultModal_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return DefaultModal_typeof(obj); }
+
+var _jsxFileName = "/Users/andrewherren/xtract_sandbox/modal-framework/src/components/DefaultModal.jsx";
 
 function DefaultModal_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -975,9 +975,9 @@ var DefaultModal_DefaultModal = /*#__PURE__*/function (_React$PureComponent) {
 
 /* harmony default export */ var components_DefaultModal = (DefaultModal_DefaultModal);
 // CONCATENATED MODULE: ./src/components/ModalFramework.jsx
-var ModalFramework_jsxFileName = "/Users/andrewherren/xtract_sandbox/modal-framework/src/components/ModalFramework.jsx";
-
 function ModalFramework_typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { ModalFramework_typeof = function _typeof(obj) { return typeof obj; }; } else { ModalFramework_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return ModalFramework_typeof(obj); }
+
+var ModalFramework_jsxFileName = "/Users/andrewherren/xtract_sandbox/modal-framework/src/components/ModalFramework.jsx";
 
 function ModalFramework_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
