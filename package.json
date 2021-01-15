@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/xtractsolutions/modal-framework#readme",
   "peerDependencies": {
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0"
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -44,13 +44,12 @@
     "css-loader": "^5.0.1",
     "enzyme": "^3.11.0",
     "eslint": "^7.17.0",
-    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard": "^16.0.2",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-standard": "^4.0.1",
     "express": "^4.17.1",
     "jsdom": "^16.4.0",
     "mocha": "^8.2.1",
@@ -58,10 +57,10 @@
     "postcss": "^8.2.4",
     "postcss-loader": "^4.1.0",
     "prettier": "^2.2.1",
+    "react-dom": "^17.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-devtools": "^4.10.1",
-    "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
     "source-map-loader": "^1.0.1",
     "style-loader": "^2.0.0",
