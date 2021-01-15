@@ -1,7 +1,7 @@
 require('@babel/register')()
 require('webpack')
 const Enzyme = require('enzyme')
-const Adapter = require('enzyme-adapter-react-16')
+const Adapter = require('@wojtekmaj/enzyme-adapter-react-17')
 Enzyme.configure({ adapter: new Adapter() })
 
 const jsdom = require('jsdom')
@@ -26,5 +26,5 @@ global.window = document.defaultView
 global.alert = window.alert
 
 global.navigator = {
-  userAgent: 'node.js'
+  userAgent: 'node.js',
 }
