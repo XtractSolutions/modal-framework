@@ -13,12 +13,12 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
     library: 'modal-framework',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
   plugins: [
     new WebpackAssetsManifest({
-      integrity: true
-    })
+      integrity: true,
+    }),
   ],
   externals: [
     {
@@ -26,26 +26,26 @@ module.exports = {
         root: 'React',
         commonjs2: 'react',
         commonjs: 'react',
-        amd: 'react'
-      }
-    }
+        amd: 'react',
+      },
+    },
   ],
   optimization: {
     minimize: false,
   },
   module: {
     rules: [
-      // source maps  
+      // source maps
       {
         test: /\.js$/,
         use: ['source-map-loader'],
-        enforce: 'pre'
+        enforce: 'pre',
       },
       // js
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        include: [path.join(__dirname, 'src')]
+        include: [path.join(__dirname, 'src')],
       },
       // CSS
       {
@@ -58,12 +58,14 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => {
-                return [autoprefixer]
-              }
-            }
-          }
-        ]
+              postcssOptions: {
+                plugins: () => {
+                  return [autoprefixer]
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.less$/,
@@ -75,12 +77,14 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => {
-                return [autoprefixer]
-              }
-            }
-          }
-        ]
+              postcssOptions: {
+                plugins: () => {
+                  return [autoprefixer]
+                },
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
@@ -90,12 +94,14 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => {
-                return [autoprefixer]
-              }
-            }
-          }
-        ]
+              postcssOptions: {
+                plugins: () => {
+                  return [autoprefixer]
+                },
+              },
+            },
+          },
+        ],
       },
       // Fonts
       {
@@ -103,13 +109,13 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 100000,
-          mimetype: 'application/font-woff'
-        }
+          mimetype: 'application/font-woff',
+        },
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader'
-      }
-    ]
-  }
+        loader: 'file-loader',
+      },
+    ],
+  },
 }
